@@ -18,17 +18,16 @@ enum MediaService {
 }
 
 model User {
-  id        Int      @default(autoincrement()) @id
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
-  username  String
-  name      String
-  email     String
-  friends   User[]   @relation("UserToUser")
-  track     Track    @relation(fields: [trackId], references: [id])
-  User      User?    @relation("UserToUser", fields: [userId], references: [id])
-  userId    Int?
-  trackId   Int
+  id         Int      @default(autoincrement()) @id
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @default(now())
+  username   String
+  name       String
+  email      String   @unique
+  followedBy User[]   @relation("UserFollows", references: [id])
+  following  User[]   @relation("UserFollows", references: [id])
+  track      Track?   @relation(fields: [trackId], references: [id])
+  trackId    Int?
 }
 
 model Track {
@@ -39,5 +38,5 @@ model Track {
   source    String
   type      MediaService @default(YOUTUBE)
   likes     User[]
-  notes     String
+  notes     String?
 }

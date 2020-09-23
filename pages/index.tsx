@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Layout from "../components/Layout";
-import { PrismaClient } from "@prisma/client";
+import { sampleUserData } from "../../utils/sample-data";
+// import { PrismaClient } from "@prisma/client";
+import { User } from "../interfaces";
 
 const IndexPage = ({ users }) => (
   <Layout title="Home | Next.js + TypeScript Example">
@@ -19,13 +21,14 @@ const IndexPage = ({ users }) => (
 );
 
 export const getServerSideProps = async () => {
-  const prisma = new PrismaClient();
-  const users = await prisma.user.findMany({
-    select: {
-      id: true,
-      name: true,
-    },
-  });
+  // const prisma = new PrismaClient();
+  // const users = await prisma.user.findMany({
+  //   select: {
+  //     id: true,
+  //     name: true,
+  //   },
+  // });
+  const users: User[] = sampleUserData;
   return { props: { users } };
 };
 

@@ -5,6 +5,15 @@
 // import User from 'path/to/interfaces';
 
 export type User = {
-  id: number
-  name: string
-}
+  id: number;
+  name: string;
+  email: string;
+  trackId: number;
+};
+
+export type Track = {
+  id: number;
+  title: string;
+  source: string;
+  notes?: string;
+};

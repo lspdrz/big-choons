@@ -1,8 +1,24 @@
-import React, { ReactNode } from 'react'
+import React from "react";
+import Link from "next/link";
 
 const Header = () => (
-    <div className="bg-gray-800 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<p>Hello World</p>
+  <nav className="p-4 mb-4 bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b-2 border-gray-200">
+    <div className="flex items-center justify-between">
+      <p className="font-bold text-green-600">
+        <Link href="#">Big Choonz</Link>
+      </p>
+      <div className="flex">
+        <p className="ml-4 text-green-600">
+          <Link href="#">+ Song</Link>
+        </p>
+        <p className="ml-4 text-black">
+          <Link href="#">Profile</Link>
+        </p>
+        <p className="ml-4 text-black">
+          <Link href="#">Logout</Link>
+        </p>
+      </div>
     </div>
-)
-export default Header
+  </nav>
+);
+export default Header;

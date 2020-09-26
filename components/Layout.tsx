@@ -1,22 +1,23 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode } from "react";
 // import Link from 'next/link'
 
-import Head from 'next/head'
-import Header from './Header'
+import Head from "next/head";
+import Header from "./Header";
+import Player from "./Player";
 
 type Props = {
-  children?: ReactNode
-  title?: string
-}
+  children?: ReactNode;
+  title?: string;
+};
 
-const Layout = ({ children, title = 'This is the default title' }: Props) => (
-  <div>
+const Layout = ({ children, title = "This is the default title" }: Props) => (
+  <div className="h-full bg-gray-200">
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
-<Header />
+    <Header />
     {/* <header>
       <nav>
         <Link href="/">
@@ -34,11 +35,8 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
       </nav>
     </header> */}
     {children}
-    <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
-    </footer>
+    <Player />
   </div>
-)
+);
 
-export default Layout
+export default Layout;

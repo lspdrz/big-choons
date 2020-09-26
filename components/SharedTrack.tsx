@@ -5,11 +5,11 @@ const SharedTrack = () => (
   <div className="bg-white max-w-2xl overflow-hidden shadow-sm flex flex-col m-auto mb-4">
     {/* Card Header */}
     <div className="w-full p-4 border-b border-gray-300 flex flex-row justify-between">
-      <div className="flex flex-row ">
+      <div className="flex flex-row items-center">
         {/* User Avatar */}
         <span className="rounded-full bg-green-600 p-3 mr-2"></span>
         <p className="text-s mr-2">User Name</p>
-        <p className="text-s text-gray-600">(00:00:00)</p>
+        <p className="text-xs text-gray-600">(00:00:00)</p>
       </div>
       <div className="flex flex-row">
         {/* ToDo - Ternary for now playing */}

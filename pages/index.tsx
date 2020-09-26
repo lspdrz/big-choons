@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Layout from "../components/Layout";
+import SharedTrack from "../components/SharedTrack";
 import { sampleUserData } from "../utils/sample-data";
 // import { PrismaClient } from "@prisma/client";
 import { User } from "../interfaces";
@@ -17,6 +18,7 @@ const IndexPage = ({ users }) => (
         <li>Name: {user.name}</li>
       ))}
     </ul>
+    <SharedTrack />
   </Layout>
 );
 

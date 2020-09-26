@@ -4,7 +4,7 @@ const SharedTrack = () => (
   // Shared track card
   <div className="bg-white max-w-2xl overflow-hidden shadow-sm flex flex-col m-auto mb-4">
     {/* Card Header */}
-    <div className="w-full p-4 border-b-2 flex flex-row justify-between">
+    <div className="w-full p-4 border-b border-gray-300 flex flex-row justify-between">
       <div className="flex flex-row ">
         {/* User Avatar */}
         <span className="rounded-full bg-green-600 p-3 mr-2"></span>

@@ -7,6 +7,12 @@ import { User } from "../interfaces";
 
 const IndexPage = ({ users }) => (
   <Layout title="Home | Next.js + TypeScript Example">
+    {/* Includeded a bunch of SharedTrack components to test scrolling */}
+    <SharedTrack />
+    <SharedTrack />
+    <SharedTrack />
+    <SharedTrack />
+    <SharedTrack />
     <h1>Hello Next.js 👋</h1>
     <p>
       <Link href="/about">
@@ -18,7 +24,6 @@ const IndexPage = ({ users }) => (
         <li>Name: {user.name}</li>
       ))}
     </ul>
-    <SharedTrack />
   </Layout>
 );
 

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from 'next/link';
 
 const SharedTrack = () => (
   // Shared track card
@@ -14,9 +15,10 @@ const SharedTrack = () => (
       <div className="flex flex-row">
         {/* ToDo - Ternary for now playing */}
         <p className="text-green-600 text-s">Now playing</p>
+        <Link href="#" >
         {/* ToDo - Make overflow icon */}
-        <a href="#" className="bg-gray-500 p-3 ml-2">
-        </a>
+          <span className="bg-gray-500 w-6 h-6 ml-2"></span>
+        </Link>
       </div>
     </div>
     {/* Card Body */}
@@ -40,15 +42,19 @@ const SharedTrack = () => (
             </button>
           </span>
           <div className="flex flex-col content-center">
-            <a href="#">
-              <p className="text-lg hover:underline">AEIOI</p>
-            </a>
+              <p className="text-lg hover:underline">
+            <Link href="#">
+                AEIOI
+            </Link>
+                </p>
             <p className="text-s text-gray-600">Di Melo</p>
           </div>
         </div>
         <div className="flex flex-col justify-center content-center invisible group-hover:visible">
           {/* ToDo - External youtube link icon*/}
-          <a href="#" className="w-6 h-6 bg-gray-500"></a>
+          <Link href="#">
+            <span className="w-6 h-6 bg-gray-500"></span>
+          </Link>
         </div>
       </div>
       {/* If no comment hide */}

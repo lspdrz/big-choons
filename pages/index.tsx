@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Layout from "../components/Layout";
 import SharedTrack from "../components/SharedTrack";
 import { sampleUserData } from "../utils/sample-data";

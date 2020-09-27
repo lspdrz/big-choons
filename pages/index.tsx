@@ -1,12 +1,14 @@
 import Layout from "../components/Layout";
 import SharedTrack from "../components/SharedTrack";
+import ProfileHead from "../components/ProfileHead";
 import { sampleUserData } from "../utils/sample-data";
 // import { PrismaClient } from "@prisma/client";
 import { User } from "../interfaces";
 
 const IndexPage = () => (
   <Layout title="Home | Next.js + TypeScript Example">
-    {/* Includeded a bunch of SharedTrack components to test scrolling */}
+    {/* Put the profile header component here to test it out */}
+    <ProfileHead />
     <SharedTrack />
     <SharedTrack />
     <SharedTrack />

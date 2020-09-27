@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const ProfileHead = () => {
   return (
-    <div className="bg-white max-w-2xl overflow-hidden shadow-sm flex flex-row m-auto mb-4 p-4">
+    <div className="bg-white max-w-2xl overflow-hidden flex flex-row m-auto mb-4 p-4 border border-gray-900">
       <div
         className="w-16 h-16 bg-pink-400 rounded-full mr-4"
         style={{

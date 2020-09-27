@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 const Header = () => (
-  <nav className="p-4 mb-4 h-15 w-full bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-gray-300 fixed top-0">
+  <nav className="p-4 mb-4 h-15 w-full bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-gray-900 fixed top-0">
     <div className="flex items-center justify-between">
       <p className="font-bold text-green-600">
         <Link href="#">Big Choonz</Link>

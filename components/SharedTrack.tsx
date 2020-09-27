@@ -1,5 +1,8 @@
 import React from "react";
-import Link from 'next/link';
+import Link from "next/link";
+import OverflowDots from "./icons/OverflowDots";
+import ExternalLink from "./icons/ExternalLink";
+import Play from "./icons/Play";
 
 const SharedTrack = () => (
   // Shared track card
@@ -14,10 +17,9 @@ const SharedTrack = () => (
       </div>
       <div className="flex flex-row">
         {/* ToDo - Ternary for now playing */}
-        <p className="text-green-600 text-s">Now playing</p>
-        <Link href="#" >
-        {/* ToDo - Make overflow icon */}
-          <span className="bg-gray-500 w-6 h-6 ml-2"></span>
+        <p className="text-green-600 text-s mr-4">Now playing</p>
+        <Link href="#">
+          <OverflowDots color="#718096" />
         </Link>
       </div>
     </div>
@@ -36,24 +38,21 @@ const SharedTrack = () => (
               backgroundSize: "cover",
             }}
           >
-            <button className="w-full invisible group-hover:visible text-white">
-              {/* ToDo - Play Icon */}
-              Play
+            <button className="w-full flex justify-center items-center invisible group-hover:visible">
+              <Play height="48" width="48" />
             </button>
           </span>
           <div className="flex flex-col content-center">
-              <p className="text-lg hover:underline">
-            <Link href="#">
-                AEIOI
-            </Link>
-                </p>
+            <p className="text-lg hover:underline">
+              <Link href="#">AEIOI</Link>
+            </p>
             <p className="text-s text-gray-600">Di Melo</p>
           </div>
         </div>
         <div className="flex flex-col justify-center content-center invisible group-hover:visible">
           {/* ToDo - External youtube link icon*/}
           <Link href="#">
-            <span className="w-6 h-6 bg-gray-500"></span>
+            <ExternalLink />
           </Link>
         </div>
       </div>

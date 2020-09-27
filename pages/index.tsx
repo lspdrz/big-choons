@@ -1,15 +1,10 @@
-import Link from "next/link";
 import Layout from "../components/Layout";
 import SharedTrack from "../components/SharedTrack";
 import { sampleUserData } from "../utils/sample-data";
 // import { PrismaClient } from "@prisma/client";
 import { User } from "../interfaces";
 
-type Props = {
-  users: User[];
-};
-
-const IndexPage = ({ users }: Props) => (
+const IndexPage = () => (
   <Layout title="Home | Next.js + TypeScript Example">
     {/* Includeded a bunch of SharedTrack components to test scrolling */}
     <SharedTrack />
@@ -17,17 +12,6 @@ const IndexPage = ({ users }: Props) => (
     <SharedTrack />
     <SharedTrack />
     <SharedTrack />
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-    <ul>
-      {users.map((user: User) => (
-        <li>Name: {user.name}</li>
-      ))}
-    </ul>
   </Layout>
 );
 

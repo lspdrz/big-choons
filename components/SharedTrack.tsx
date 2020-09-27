@@ -19,7 +19,7 @@ const SharedTrack = () => (
         {/* ToDo - Ternary for now playing */}
         <p className="text-green-600 text-s mr-4">Now playing</p>
         <Link href="#">
-          <OverflowDots />
+          <OverflowDots color="#718096" />
         </Link>
       </div>
     </div>
@@ -38,8 +38,8 @@ const SharedTrack = () => (
               backgroundSize: "cover",
             }}
           >
-            <button className="invisible group-hover:visible">
-              <Play />
+            <button className="w-full flex justify-center items-center invisible group-hover:visible">
+              <Play height="48" width="48" />
             </button>
           </span>
           <div className="flex flex-col content-center">

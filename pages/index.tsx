@@ -17,17 +17,6 @@ const IndexPage = ({ users }: Props) => (
     <SharedTrack />
     <SharedTrack />
     <SharedTrack />
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-    <ul>
-      {users.map((user: User) => (
-        <li>Name: {user.name}</li>
-      ))}
-    </ul>
   </Layout>
 );
 

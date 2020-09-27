@@ -4,11 +4,7 @@ import { sampleUserData } from "../utils/sample-data";
 // import { PrismaClient } from "@prisma/client";
 import { User } from "../interfaces";
 
-type Props = {
-  users: User[];
-};
-
-const IndexPage = ({ users }: Props) => (
+const IndexPage = () => (
   <Layout title="Home | Next.js + TypeScript Example">
     {/* Includeded a bunch of SharedTrack components to test scrolling */}
     <SharedTrack />

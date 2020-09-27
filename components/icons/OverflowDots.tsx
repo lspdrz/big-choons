@@ -2,13 +2,15 @@ import React from "react";
 
 type Props = {
   color?: string;
+  width?: string;
+  height?: string;
 };
 
-export default function OverflowDots({ color }: Props) {
+export default function OverflowDots({ color, width, height }: Props) {
   return (
     <svg
-      width="24"
-      height="24"
+      width={width}
+      height={height}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -31,4 +33,6 @@ export default function OverflowDots({ color }: Props) {
 
 OverflowDots.defaultProps = {
   color: "#333",
+  width: "24",
+  height: "24",
 };

@@ -13,7 +13,7 @@ const SharedTrack = () => (
         {/* User Avatar */}
         <span className="rounded-full bg-green-600 p-3 mr-2"></span>
         <p className="text-s mr-2">User Name</p>
-        <p className="text-xs text-gray-600">(00:00:00)</p>
+        <p className="text-xs text-gray-600">(Expires in 00:00:00)</p>
       </div>
       <div className="flex flex-row">
         {/* ToDo - Ternary for now playing */}

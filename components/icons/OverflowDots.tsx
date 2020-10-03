@@ -32,7 +32,7 @@ export default function OverflowDots({ color, width, height }: Props) {
 }
 
 OverflowDots.defaultProps = {
-  color: "#333",
+  color: "#1a202c",
   width: "24",
   height: "24",
 };

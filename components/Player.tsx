@@ -7,7 +7,7 @@ import Play from "./icons/Play";
 import SkipNext from "./icons/SkipNext";
 
 const Player = () => (
-  <section className="w-full border-t bg-white h-24 p-4 fixed bottom-0">
+  <section className="w-full border-t border-gray-900 bg-white h-20 fixed bottom-0">
     <div className="flex flex-row justify-between w-full h-full">
       {/* PLAYER CONTROLS */}
       <div className="flex flex-row justify-self-start items-center">

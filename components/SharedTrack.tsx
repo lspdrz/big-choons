@@ -6,12 +6,20 @@ import Play from "./icons/Play";
 
 const SharedTrack = () => (
   // Shared track card
-  <div className="bg-white max-w-2xl overflow-hidden shadow-sm flex flex-col m-auto mb-4">
+  <div className="bg-white max-w-2xl overflow-hidden flex flex-col m-auto mb-4 border border-gray-900">
     {/* Card Header */}
-    <div className="w-full p-4 border-b border-gray-300 flex flex-row justify-between">
+    <div className="w-full p-4 border-b border-gray-900 flex flex-row justify-between">
       <div className="flex flex-row items-center">
         {/* User Avatar */}
-        <span className="rounded-full bg-green-600 p-3 mr-2"></span>
+        <span
+          className="rounded-full bg-green-600 p-3 mr-2"
+          style={{
+            backgroundImage: "url('https://thispersondoesnotexist.com/image')",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          }}
+        ></span>
         <p className="text-s mr-2">User Name</p>
         <p className="text-xs text-gray-600">(Expires in 00:00:00)</p>
       </div>
@@ -19,7 +27,7 @@ const SharedTrack = () => (
         {/* ToDo - Ternary for now playing */}
         <p className="text-green-600 text-s mr-4">Now playing</p>
         <Link href="#">
-          <OverflowDots color="#718096" />
+          <OverflowDots color="#1a202c" />
         </Link>
       </div>
     </div>

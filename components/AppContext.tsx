@@ -1,19 +1,15 @@
 import React, { createContext, useState } from "react";
 
-type AppState = {
+type IAppState = {
   modalId?: String;
 };
 
-type AppContextType = [
-  AppState,
-  React.Dispatch<React.SetStateAction<AppState>>
-];
+type IAppContext = [IAppState, React.Dispatch<React.SetStateAction<IAppState>>];
 
-const AppContext = createContext<AppContextType>([{}, () => null]);
-// const AppContext = createContext([{}, () => {}]);
+const AppContext = createContext<IAppContext>([{}, () => null]);
 
 const AppProvider = (props: any) => {
-  const [state, setState] = useState({
+  const [state, setState] = useState<IAppState>({
     modalId: "",
   });
   return (

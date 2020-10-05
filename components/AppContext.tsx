@@ -1,6 +1,16 @@
 import React, { createContext, useState } from "react";
 
-const AppContext = createContext([{}, () => {}]);
+type AppState = {
+  modalId?: String;
+};
+
+type AppContextType = [
+  AppState,
+  React.Dispatch<React.SetStateAction<AppState>>
+];
+
+const AppContext = createContext<AppContextType>([{}, () => null]);
+// const AppContext = createContext([{}, () => {}]);
 
 const AppProvider = (props: any) => {
   const [state, setState] = useState({

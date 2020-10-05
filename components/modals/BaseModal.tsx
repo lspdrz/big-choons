@@ -22,6 +22,7 @@ const BaseModal = ({ children }: Props) => {
   return modalRoot
     ? ReactDOM.createPortal(
         <div className="flex flex-col fixed z-10 inset-0 overflow-y-auto">
+          {/* Roby, please add the x button here and attach closeModal to it */}
           <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:flex sm:p-0 h-full">
             <div className="fixed inset-0 transition-opacity">
               <div

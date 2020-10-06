@@ -1,21 +1,9 @@
-import Layout from "../components/Layout";
-import SharedTrack from "../components/SharedTrack";
-import ProfileHead from "../components/ProfileHead";
+import App from "../components/App";
 import { sampleUserData } from "../utils/sample-data";
 // import { PrismaClient } from "@prisma/client";
 import { User } from "../interfaces";
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    {/* Put the profile header component here to test it out */}
-    <ProfileHead />
-    <SharedTrack />
-    <SharedTrack />
-    <SharedTrack />
-    <SharedTrack />
-    <SharedTrack />
-  </Layout>
-);
+const IndexPage = () => <App />;
 
 export const getServerSideProps = async () => {
   // const prisma = new PrismaClient();

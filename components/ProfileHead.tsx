@@ -5,7 +5,7 @@ const ProfileHead = () => {
   return (
     <div className="bg-white max-w-2xl overflow-hidden flex flex-row m-auto mb-4 p-4 border border-gray-900">
       <div
-        className="w-16 h-16 bg-pink-400 rounded-full mr-4"
+        className="w-16 h-16 bg-pink-500 rounded-full mr-4"
         style={{
           backgroundImage: "url('https://thispersondoesnotexist.com/image')",
           backgroundRepeat: "no-repeat",
@@ -16,7 +16,7 @@ const ProfileHead = () => {
       <div className="flex flex-col">
         <div className="flex flex-row items-center">
           <p className="text-xl mr-2">User Name</p>
-          <p className="text-green-500">
+          <p className="text-pink-500">
             <Link href="#">Follow</Link>
           </p>
         </div>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import OverflowDots from "./icons/OverflowDots";
 import ExternalLink from "./icons/ExternalLink";
 import Play from "./icons/Play";
+import NowPlayingMarquee from "./NowPlayingMarquee";
 
 const SharedTrack = () => (
   // Shared track card
@@ -12,7 +13,7 @@ const SharedTrack = () => (
       <div className="flex flex-row items-center">
         {/* User Avatar */}
         <span
-          className="rounded-full bg-green-600 p-3 mr-2"
+          className="rounded-full bg-pink-500 p-3 mr-2"
           style={{
             backgroundImage: "url('https://thispersondoesnotexist.com/image')",
             backgroundRepeat: "no-repeat",
@@ -23,9 +24,9 @@ const SharedTrack = () => (
         <p className="text-s mr-2">User Name</p>
         <p className="text-xs text-gray-600">(Expires in 00:00:00)</p>
       </div>
-      <div className="flex flex-row">
+      <div className="flex flex-row items-center">
         {/* ToDo - Ternary for now playing */}
-        <p className="text-green-600 text-s mr-4">Now playing</p>
+        <NowPlayingMarquee />
         <Link href="#">
           <OverflowDots color="#1a202c" />
         </Link>

@@ -5,14 +5,12 @@ import { concatPagination } from "@apollo/client/utilities";
 let apolloClient;
 
 function createApolloClient() {
+  console.log("hiiiiiii");
+  console.log(process.env.NODE_ENV);
   return new ApolloClient({
     ssrMode: typeof window === "undefined",
     link: new HttpLink({
-      uri:
-        process.env.NODE_ENV === "production" ||
-        process.env.NODE_ENV === "preview"
-          ? `${process.env.VERCEL_URL}/api`
-          : `${process.env.LOCAL_URL}/api`, // Server URL (must be absolute)
+      uri: `${process.env.VERCEL_URL}/api`, // Server URL (must be absolute)
       credentials: "same-origin", // Additional fetch() options like `credentials` or `headers`
     }),
     cache: new InMemoryCache({

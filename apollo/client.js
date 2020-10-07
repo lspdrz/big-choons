@@ -2,13 +2,31 @@ import { useMemo } from "react";
 import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client";
 import { concatPagination } from "@apollo/client/utilities";
 
+const isProd = String(process.env.NODE_ENV) === "production";
+const isDev = String(process.env.NODE_ENV) === "development";
+
+const LOCAL_HOST = "http://localhost:3000/api";
+
+const getProdPath = () => {
+  const currentBranch = process.env.VERCEL_GITHUB_COMMIT_REF.toLowerCase()
+    .replace("/", "-")
+    .replace("_", "-");
+
+  if (currentBranch === "master") {
+    return process.env.WEB_URI; // we have a production URL env in the project we are working on
+  }
+  return `https://your-project${currentBranch}.vercel.app/api`;
+};
+
+const API_URL = isProd ? getProdPath() : LOCAL_HOST;
+
 let apolloClient;
 
 function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === "undefined",
     link: new HttpLink({
-      uri: `${process.env.VERCEL_URL}/api`, // Server URL (must be absolute)
+      uri: API_URL, // Server URL (must be absolute)
       credentials: "same-origin", // Additional fetch() options like `credentials` or `headers`
     }),
     cache: new InMemoryCache({

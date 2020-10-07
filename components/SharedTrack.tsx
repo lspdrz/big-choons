@@ -7,7 +7,7 @@ import NowPlayingMarquee from "./NowPlayingMarquee";
 
 const SharedTrack = () => (
   // Shared track card
-  <div className="bg-white max-w-2xl overflow-hidden flex flex-col m-auto mb-4 border border-gray-900">
+  <div className="bg-white max-w-2xl overflow-hidden flex flex-col m-auto mb-4 border-t border-b sm:border-l sm:border-r border-gray-900">
     {/* Card Header */}
     <div className="w-full p-4 border-b border-gray-900 flex flex-row justify-between">
       <div className="flex flex-row items-center">

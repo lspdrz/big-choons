@@ -27,7 +27,7 @@ const Query = objectType({
   definition(t) {
     t.list.field("users", {
       type: "User",
-      resolve(_parent, _args, ctx) {
+      resolve(_parent, _args, _) {
         return prisma.user.findMany();
       },
     });

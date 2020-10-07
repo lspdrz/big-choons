@@ -15,10 +15,15 @@ const getProdPath = () => {
   if (currentBranch === "master") {
     return process.env.WEB_URI; // we have a production URL env in the project we are working on
   }
-  return `https://your-project${currentBranch}.vercel.app/api`;
+  return `https://big-choons${currentBranch}.vercel.app/api`;
 };
 
 const API_URL = isProd ? getProdPath() : LOCAL_HOST;
+
+console.log("hey from apollo client");
+console.log(API_URL);
+console.log(currentBranch);
+console.log(process.env.VERCEL_GITHUB_COMMIT_REF);
 
 let apolloClient;
 

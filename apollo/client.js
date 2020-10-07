@@ -5,10 +5,12 @@ import { concatPagination } from "@apollo/client/utilities";
 let apolloClient;
 
 function createApolloClient() {
+  console.log("hiiiii");
+  console.log(process.env.API_URL);
   return new ApolloClient({
     ssrMode: typeof window === "undefined",
     link: new HttpLink({
-      uri: "http://localhost:3000/api", // Server URL (must be absolute)
+      uri: process.env.API_URL, // Server URL (must be absolute)
       credentials: "same-origin", // Additional fetch() options like `credentials` or `headers`
     }),
     cache: new InMemoryCache({

@@ -5,8 +5,6 @@ import { concatPagination } from "@apollo/client/utilities";
 let apolloClient;
 
 function createApolloClient() {
-  console.log("hiiiiiii");
-  console.log(process.env.NODE_ENV);
   return new ApolloClient({
     ssrMode: typeof window === "undefined",
     link: new HttpLink({

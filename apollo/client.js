@@ -12,9 +12,9 @@ const getProdPath = () => {
     .replace("/", "-")
     .replace("_", "-");
 
-  if (currentBranch === "master") {
-    return process.env.WEB_URI; // we have a production URL env in the project we are working on
-  }
+  // if (currentBranch === "master") {
+  //   return process.env.WEB_URI; // we have a production URL env in the project we are working on
+  // }
   console.log(currentBranch);
   return `https://big-choons-${currentBranch}.vercel.app/api`;
 };

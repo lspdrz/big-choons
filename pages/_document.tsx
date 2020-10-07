@@ -18,6 +18,7 @@ class MyDocument extends Document {
         <Head />
         <body className="h-full overflow-hidden">
           <Main />
+          <div id="modal" />
           <NextScript />
         </body>
       </Html>

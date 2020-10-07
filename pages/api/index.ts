@@ -22,26 +22,26 @@ const User = objectType({
   },
 });
 
-// const Query = objectType({
-//   name: "Query",
-//   definition(t) {
-//     t.list.field("users", {
-//       type: "User",
-//       resolve(_parent, _args, ctx) {
-//         return prisma.user.findMany();
-//       },
-//     });
-// t.field("post", {
-//   type: "Post",
-//   args: {
-//     postId: stringArg({ nullable: false }),
-//   },
-//   resolve: (_, args) => {
-//     return prisma.post.findOne({
-//       where: { id: Number(args.postId) },
-//     });
-//   },
-// });
+const Query = objectType({
+  name: "Query",
+  definition(t) {
+    t.list.field("users", {
+      type: "User",
+      resolve(_parent, _args, ctx) {
+        return prisma.user.findMany();
+      },
+    });
+    // t.field("post", {
+    //   type: "Post",
+    //   args: {
+    //     postId: stringArg({ nullable: false }),
+    //   },
+    //   resolve: (_, args) => {
+    //     return prisma.post.findOne({
+    //       where: { id: Number(args.postId) },
+    //     });
+  },
+});
 
 // t.list.field("feed", {
 //   type: "Post",
@@ -150,7 +150,7 @@ const User = objectType({
 // });
 
 export const schema = makeSchema({
-  types: [User, GQLDate],
+  types: [User, Query, GQLDate],
   outputs: {
     typegen: path.join(process.cwd(), "pages", "api", "nexus-typegen.ts"),
     schema: path.join(process.cwd(), "pages", "api", "schema.graphql"),

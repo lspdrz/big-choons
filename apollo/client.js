@@ -9,7 +9,8 @@ function createApolloClient() {
     ssrMode: typeof window === "undefined",
     link: new HttpLink({
       uri:
-        process.env.NODE_ENV === "production" || "preview"
+        process.env.NODE_ENV === "production" ||
+        process.env.NODE_ENV === "preview"
           ? `${process.env.VERCEL_URL}/api`
           : `${process.env.LOCAL_URL}/api`, // Server URL (must be absolute)
       credentials: "same-origin", // Additional fetch() options like `credentials` or `headers`

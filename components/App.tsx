@@ -4,8 +4,14 @@ import SharedTrack from "./SharedTrack";
 import ProfileHead from "./ProfileHead";
 import Modals from "./modals/Modals";
 import { AppProvider } from "./AppContext";
+import { User } from "../interfaces";
 
-const App = () => {
+type Props = {
+  users: User[];
+};
+const App = ({ users }: Props) => {
+  console.log("here are all the users");
+  console.log(users);
   return (
     <AppProvider>
       <Modals />

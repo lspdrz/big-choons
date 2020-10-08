@@ -16,7 +16,7 @@ const getProdPath = () => {
   //   return process.env.WEB_URI; // we have a production URL env in the project we are working on
   // }
   console.log(currentBranch);
-  return `https://big-choons-git-${currentBranch}.vercel.app/api`;
+  return `https://big-choons-git-${currentBranch}.big-choons.vercel.app/api`;
 };
 
 const API_URL = isProd ? getProdPath() : LOCAL_HOST;

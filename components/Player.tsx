@@ -7,10 +7,10 @@ import Play from "./icons/Play";
 import SkipNext from "./icons/SkipNext";
 
 const Player = () => (
-  <section className="w-full border-t border-gray-900 bg-white h-20 fixed bottom-0">
+  <section className="w-full border-t border-gray-500 bg-white h-20 fixed bottom-0">
     <div className="flex flex-row justify-between w-full h-full">
       {/* PLAYER CONTROLS */}
-      <div className="flex flex-row justify-self-start items-center">
+      <div className="flex flex-row justify-self-start items-center ml-4">
         <button className="p-2 mr-2">
           <SkipBack />
         </button>
@@ -22,7 +22,7 @@ const Player = () => (
         </button>
       </div>
       {/* SONG INFO */}
-      <div className="group flex flex-row">
+      <div className="group flex flex-row items-center">
         {/* Song Thumbnail - ToDo: make seperate component */}
         <span
           className="w-16 h-16 bg-yellow-300 mr-2 flex justify-center content-center"
@@ -41,14 +41,15 @@ const Player = () => (
         </span>
         <div className="flex flex-col content-center">
           <p className="text-xs text-gray-600">
-            Shared by <Link href="#">User Name</Link> (Expires in 22:42:42)
+            Shared by <Link href="#">Goldie Alexander</Link> (Expires in
+            22:42:42)
           </p>
           <p className="text-lg hover:underline">
             <Link href="#">The Heinz Kiessling Orchestra - Remember Rio</Link>
           </p>
         </div>
       </div>
-      <div className="flex flex-row">
+      <div className="flex flex-row mr-4">
         <button className="p-2">
           <ExternalLink />
         </button>

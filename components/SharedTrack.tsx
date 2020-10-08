@@ -7,9 +7,9 @@ import NowPlayingMarquee from "./NowPlayingMarquee";
 
 const SharedTrack = () => (
   // Shared track card
-  <div className="bg-white max-w-2xl overflow-hidden flex flex-col m-auto mb-4 border-t border-b sm:border-l sm:border-r border-gray-900">
+  <div className="bg-white max-w-2xl overflow-hidden flex flex-col m-auto mb-4 border-t border-b sm:border-l sm:border-r border-gray-500">
     {/* Card Header */}
-    <div className="w-full p-4 border-b border-gray-900 flex flex-row justify-between">
+    <div className="w-full p-4 border-b border-gray-500 flex flex-row justify-between">
       <div className="flex flex-row items-center">
         {/* User Avatar */}
         <span
@@ -51,18 +51,14 @@ const SharedTrack = () => (
               <Play height="48" width="48" />
             </button>
           </span>
-          <div className="flex flex-col content-center">
+          <div className="flex flex-col content-center justify-center items-center">
             <p className="text-lg hover:underline">
-              <Link href="#">AEIOI</Link>
+              <Link href="#">
+                Change ft Luther Vandross - The Glow Of Love (Warner Bros/RFC
+                Records 1980)
+              </Link>
             </p>
-            <p className="text-s text-gray-600">Di Melo</p>
           </div>
-        </div>
-        <div className="flex flex-col justify-center content-center invisible group-hover:visible">
-          {/* ToDo - External youtube link icon*/}
-          <Link href="#">
-            <ExternalLink />
-          </Link>
         </div>
       </div>
       {/* If no comment hide */}

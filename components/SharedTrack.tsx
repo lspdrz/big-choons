@@ -22,7 +22,6 @@ const SharedTrack = () => (
           }}
         ></span>
         <p className="text-s mr-2">User Name</p>
-        <p className="text-xs text-gray-600">(Expires in 00:00:00)</p>
       </div>
       <div className="flex flex-row items-center">
         {/* ToDo - Ternary for now playing */}
@@ -69,6 +68,9 @@ const SharedTrack = () => (
           sint. Velit officia consequat duis enim velit mollit. Exercitation
           veniam consequat sunt nostrud amet."
         </p>
+      </div>
+      <div className="pt-3 flex-row justify-between">
+        <p className="text-xs text-gray-600">(Expires in 00:00:00)</p>
       </div>
     </div>
   </div>

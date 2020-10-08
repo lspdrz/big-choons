@@ -2,15 +2,29 @@ import { useMemo } from "react";
 import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client";
 import { concatPagination } from "@apollo/client/utilities";
 
+const isProd = String(process.env.NODE_ENV) === "production";
+const isDev = String(process.env.NODE_ENV) === "development";
+
+const getProdPath = () => {
+  const currentBranch = process.env.VERCEL_GITHUB_COMMIT_REF.toLowerCase()
+    .replace("/", "-")
+    .replace("_", "-");
+
+  if (currentBranch === "master") {
+    return process.env.APP_URL;
+  }
+  return `https://big-choons-git-${currentBranch}.big-choons.vercel.app/api`;
+};
+
+const apiUrl = isProd ? getProdPath() : process.env.LOCAL_HOST;
+
 let apolloClient;
 
 function createApolloClient() {
-  console.log("hiiiii");
-  console.log(process.env.API_URL);
   return new ApolloClient({
     ssrMode: typeof window === "undefined",
     link: new HttpLink({
-      uri: process.env.API_URL, // Server URL (must be absolute)
+      uri: apiUrl, // Server URL (must be absolute)
       credentials: "same-origin", // Additional fetch() options like `credentials` or `headers`
     }),
     cache: new InMemoryCache({

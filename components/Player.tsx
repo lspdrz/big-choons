@@ -7,10 +7,10 @@ import Play from "./icons/Play";
 import SkipNext from "./icons/SkipNext";
 
 const Player = () => (
-  <section className="w-full border-t border-gray-500 bg-white h-20 fixed bottom-0">
+  <section className="w-full border-t border-gray-500 bg-white h-20 fixed bottom-0 px-4 sm:px-6 lg:px-8">
     <div className="flex flex-row justify-between w-full h-full">
       {/* PLAYER CONTROLS */}
-      <div className="flex flex-row justify-self-start items-center ml-4">
+      <div className="flex flex-row justify-self-start items-center">
         <button className="p-2 mr-2">
           <SkipBack />
         </button>
@@ -49,10 +49,7 @@ const Player = () => (
           </p>
         </div>
       </div>
-      <div className="flex flex-row mr-4">
-        <button className="p-2">
-          <ExternalLink />
-        </button>
+      <div className="flex flex-row">
         <button className="p-2 ml-4">
           <Volume />
         </button>

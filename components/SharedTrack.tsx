@@ -1,13 +1,15 @@
 import React from "react";
 import Link from "next/link";
 import OverflowDots from "./icons/OverflowDots";
-import ExternalLink from "./icons/ExternalLink";
 import Play from "./icons/Play";
 import NowPlayingMarquee from "./NowPlayingMarquee";
 
 const SharedTrack = () => (
   // Shared track card
-  <div className="bg-white max-w-2xl overflow-hidden flex flex-col m-auto mb-4 border-t border-b sm:border-l sm:border-r border-gray-500">
+  <div
+    className="bg-white max-w-lg overflow-hidden flex flex-col border border-gray-500"
+    style={{ height: "fit-content" }}
+  >
     {/* Card Header */}
     <div className="w-full p-4 border-b border-gray-500 flex flex-row justify-between">
       <div className="flex flex-row items-center">
@@ -33,44 +35,41 @@ const SharedTrack = () => (
     </div>
     {/* Card Body */}
     <div className="p-4 flex flex-col">
-      <div className="group flex flex-row justify-between content-center">
-        <div className="group flex flex-row">
+      <div className="group flex justify-between content-center flex-col">
+        <div className="group flex flex-col">
           {/* Song Thumbnail - ToDo: make seperate component */}
           <span
-            className="w-16 h-16 bg-yellow-300 mr-2 flex justify-center content-center"
+            className="bg-pink-300 mb-3 flex justify-center content-center w-full h-64"
             style={{
               backgroundImage:
-                "url('https://i.ytimg.com/vi/Zse87KUaAMo/hqdefault.jpg')",
+                "url('https://i.ytimg.com/vi/9Gj47G2e1Jc/hqdefault.jpg')",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
               backgroundSize: "cover",
+              backgroundColor: "#fff5f7",
             }}
-          >
-            <button className="w-full flex justify-center items-center invisible group-hover:visible">
-              <Play height="48" width="48" />
+          ></span>
+          <div className="flex flex-row items-center">
+            <button className="p-2 mr-2 rounded-full bg-white border border-gray-900">
+              <Play color="#1a202c" />
             </button>
-          </span>
-          <div className="flex flex-col content-center justify-center items-center">
-            <p className="text-lg hover:underline">
-              <Link href="#">
-                Change ft Luther Vandross - The Glow Of Love (Warner Bros/RFC
-                Records 1980)
-              </Link>
+            <p className="text-base hover:underline">
+              <Link href="#">Mariya Takeuchi Plastic Love 竹内 まりや</Link>
             </p>
           </div>
         </div>
       </div>
       {/* If no comment hide */}
       <div className="w-full bg-gray-100 mt-4 p-4 flex flex-col">
-        <p className="text-sm font-bold mb-3">User Name:</p>
-        <p>
+        <p className="text-sm font-bold mb-3 text-gray-900">User Name:</p>
+        <p className="text-gray-900">
           "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
           sint. Velit officia consequat duis enim velit mollit. Exercitation
           veniam consequat sunt nostrud amet."
         </p>
       </div>
-      <div className="pt-3 flex-row justify-between">
-        <p className="text-xs text-gray-600">(Expires in 00:00:00)</p>
+      <div className="pt-3 flex flex-row justify-end w-full">
+        <p className="text-xs text-pink-400">Expires in 00:00:00</p>
       </div>
     </div>
   </div>

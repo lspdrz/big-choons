@@ -17,11 +17,11 @@ class MyDocument extends Document {
       <Html
         className="h-full overflow-hidden"
         style={{
-          background: "rgb(254,215,226)",
-          background:
-            "-moz-linear-gradient(0deg, rgba(254,215,226,1) 0%, rgba(247,250,252,1) 15%)",
-          background:
-            "-webkit-linear-gradient(0deg, rgba(254,215,226,1) 0%, rgba(247,250,252,1) 15%)",
+          // background: "rgb(254,215,226)",
+          // background:
+          //   "-moz-linear-gradient(0deg, rgba(254,215,226,1) 0%, rgba(247,250,252,1) 15%)",
+          // background:
+          //   "-webkit-linear-gradient(0deg, rgba(254,215,226,1) 0%, rgba(247,250,252,1) 15%)",
           background:
             "linear-gradient(0deg, rgba(254,215,226,1) 0%, rgba(247,250,252,1) 15%)",
         }}

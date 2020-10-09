@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import ExternalLink from "./icons/ExternalLink";
 import Volume from "./icons/Volume";
 import SkipBack from "./icons/SkipBack";
 import Play from "./icons/Play";

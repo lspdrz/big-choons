@@ -23,7 +23,9 @@ const SharedTrack = () => (
             backgroundSize: "cover",
           }}
         ></span>
-        <p className="text-s mr-2">User Name</p>
+        <p className="text-s mr-2">
+          <Link href="#">Doug Walsh</Link>
+        </p>
       </div>
       <div className="flex flex-row items-center">
         {/* ToDo - Ternary for now playing */}
@@ -50,18 +52,21 @@ const SharedTrack = () => (
             }}
           ></span>
           <div className="flex flex-row items-center">
-            <button className="p-2 mr-2 rounded-full bg-white border border-gray-900">
+            <button className="p-2 mr-2 rounded-full bg-white border border-gray-900 hover:border-gray-500">
               <Play color="#1a202c" />
             </button>
-            <p className="text-base hover:underline">
-              <Link href="#">Mariya Takeuchi Plastic Love 竹内 まりや</Link>
-            </p>
+            <div className="flex flex-col">
+              <p className="text-base hover:underline">
+                <Link href="#">Mariya Takeuchi Plastic Love 竹内 まりや</Link>
+              </p>
+              <p className="text-sm text-gray-600">00:00</p>
+            </div>
           </div>
         </div>
       </div>
       {/* If no comment hide */}
       <div className="w-full bg-gray-100 mt-4 p-4 flex flex-col">
-        <p className="text-sm font-bold mb-3 text-gray-900">User Name:</p>
+        <p className="text-sm font-bold mb-3 text-gray-900">Doug Walsh:</p>
         <p className="text-gray-900">
           "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
           sint. Velit officia consequat duis enim velit mollit. Exercitation

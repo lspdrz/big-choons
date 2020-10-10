@@ -15,7 +15,7 @@ const SharedTrack = () => (
       <div className="flex flex-row items-center">
         {/* User Avatar */}
         <span
-          className="rounded-full bg-pink-500 p-3 mr-2"
+          className="rounded-full bg-purple-500 p-3 mr-2"
           style={{
             backgroundImage: "url('https://thispersondoesnotexist.com/image')",
             backgroundRepeat: "no-repeat",
@@ -36,45 +36,44 @@ const SharedTrack = () => (
       </div>
     </div>
     {/* Card Body */}
-    <div className="p-4 flex flex-col">
-      <div className="group flex justify-between content-center flex-col">
-        <div className="group flex flex-col">
-          {/* Song Thumbnail - ToDo: make seperate component */}
-          <span
-            className="bg-pink-300 mb-3 flex justify-center content-center w-full h-64"
-            style={{
-              backgroundImage:
-                "url('https://i.ytimg.com/vi/9Gj47G2e1Jc/hqdefault.jpg')",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-              backgroundColor: "#fff5f7",
-            }}
-          ></span>
-          <div className="flex flex-row items-center">
-            <button className="p-2 mr-2 rounded-full bg-white border border-gray-900 hover:border-gray-500">
-              <Play color="#1a202c" />
-            </button>
-            <div className="flex flex-col">
-              <p className="text-base hover:underline">
-                <Link href="#">Mariya Takeuchi Plastic Love 竹内 まりや</Link>
-              </p>
-              <p className="text-sm text-gray-600">00:00</p>
-            </div>
+    <div className="flex flex-col">
+      <div className="group flex flex-col">
+        {/* Song Thumbnail - ToDo: make seperate component */}
+        <span
+          className="bg-purple-300 mb-3 flex justify-center content-center w-full h-64"
+          style={{
+            backgroundImage:
+              "url('https://i.ytimg.com/vi/60Bd_93hzAU/mqdefault.jpg')",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundColor: "#fff5f7",
+          }}
+        ></span>
+      </div>
+      <div className="p-4 flex flex-col">
+        <div className="flex flex-row items-center">
+          <button className="p-2 mr-2 rounded-full bg-white border border-gray-900 hover:border-gray-500">
+            <Play color="#1a202c" />
+          </button>
+          <div className="flex flex-col">
+            <p className="text-base hover:underline">
+              <Link href="#">Surface | Falling in Love 7" Edit (1983)</Link>
+            </p>
+            <p className="text-sm text-gray-600">00:00</p>
           </div>
         </div>
-      </div>
-      {/* If no comment hide */}
-      <div className="w-full bg-gray-100 mt-4 p-4 flex flex-col">
-        <p className="text-sm font-bold mb-3 text-gray-900">Doug Walsh:</p>
-        <p className="text-gray-900">
-          "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-          sint. Velit officia consequat duis enim velit mollit. Exercitation
-          veniam consequat sunt nostrud amet."
-        </p>
-      </div>
-      <div className="pt-3 flex flex-row justify-end w-full">
-        <p className="text-xs text-pink-400">Expires in 00:00:00</p>
+        {/* If no comment hide */}
+        <div className="w-full bg-gray-100 mt-4 p-4 flex flex-col">
+          <p className="text-gray-900">
+            "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+            sint. Velit officia consequat duis enim velit mollit. Exercitation
+            veniam consequat sunt nostrud amet."
+          </p>
+        </div>
+        <div className="pt-3 flex flex-row justify-end w-full">
+          <p className="text-xs text-purple-400">Expires in 00:00:00</p>
+        </div>
       </div>
     </div>
   </div>

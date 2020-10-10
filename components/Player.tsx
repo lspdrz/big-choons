@@ -13,7 +13,7 @@ const Player = () => (
         <button className="p-2 mr-2">
           <SkipBack />
         </button>
-        <button className="p-4 mr-2 rounded-full bg-pink-500">
+        <button className="p-4 mr-2 rounded-full bg-purple-500">
           <Play />
         </button>
         <button className="p-2 mr-2">

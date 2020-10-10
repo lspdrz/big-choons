@@ -34,7 +34,7 @@ export default function Volume({ color, height, width }: Props) {
 }
 
 Volume.defaultProps = {
-  color: "#333",
+  color: "#1A202C",
   height: "24",
   width: "24",
 };

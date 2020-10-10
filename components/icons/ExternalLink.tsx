@@ -28,7 +28,7 @@ export default function ExternalLink({ color, width, height }: Props) {
 }
 
 ExternalLink.defaultProps = {
-  color: "#333",
+  color: "#1A202C",
   width: "24",
   height: "24",
 };

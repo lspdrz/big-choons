@@ -15,7 +15,7 @@ const SharedTrack = () => (
       <div className="flex flex-row items-center">
         {/* User Avatar */}
         <span
-          className="rounded-full bg-purple-500 p-3 mr-2"
+          className="rounded-full bg-purple-600 p-3 mr-2"
           style={{
             backgroundImage: "url('https://thispersondoesnotexist.com/image')",
             backgroundRepeat: "no-repeat",
@@ -71,7 +71,8 @@ const SharedTrack = () => (
             veniam consequat sunt nostrud amet."
           </p>
         </div>
-        <div className="pt-3 flex flex-row justify-end w-full">
+        <div className="pt-3 flex flex-row justify-between w-full">
+          <p className="text-xs text-gray-700">242424 Listens</p>
           <p className="text-xs text-purple-400">Expires in 00:00:00</p>
         </div>
       </div>

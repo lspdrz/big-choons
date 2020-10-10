@@ -23,7 +23,7 @@ class MyDocument extends Document {
           // background:
           //   "-webkit-linear-gradient(0deg, rgba(254,215,226,1) 0%, rgba(247,250,252,1) 15%)",
           background:
-            "linear-gradient(0deg, rgba(254,215,226,1) 0%, rgba(247,250,252,1) 15%)",
+            "linear-gradient(0deg, rgba(233,216,253,1) 0%, rgba(247,250,252,1) 18%)",
         }}
       >
         <Head />

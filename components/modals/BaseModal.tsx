@@ -35,7 +35,7 @@ const BaseModal = ({ children }: Props) => {
               ></div>
             </div>
             <div
-              className="inline-block align-bottom bg-white overflow-hidden shadow-xl transform transition-all w-full sm:w-full md:w-auto"
+              className="inline-block align-bottom bg-white overflow-hidden shadow-xl transform transition-all w-full sm:w-full md:max-w-2xl"
               role="dialog"
               aria-modal="true"
               aria-labelledby="modal-headline"

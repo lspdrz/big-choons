@@ -1,29 +1,19 @@
 import React from "react";
 import Layout from "./Layout";
-import SharedTrack from "./SharedTrack";
-import ProfileHead from "./ProfileHead";
+
 import Modals from "./modals/Modals";
 import { AppProvider } from "./AppContext";
-import { User } from "../interfaces";
+import TrackFeed from "./TrackFeed";
+import AboutButton from "./AboutButton";
 
-type Props = {
-  users: User[];
-};
-const App = ({ users }: Props) => {
-  console.log("here are all the users");
-  console.log(users);
+const App = () => {
   return (
     <AppProvider>
       <Modals />
       <Layout title="Big Choonz">
-        {/* Put the profile header component here to test it out */}
-        <ProfileHead />
-        <SharedTrack />
-        <SharedTrack />
-        <SharedTrack />
-        <SharedTrack />
-        <SharedTrack />
+        <TrackFeed />
       </Layout>
+      <AboutButton />
     </AppProvider>
   );
 };

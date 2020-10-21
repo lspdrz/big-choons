@@ -29,7 +29,7 @@ export default function SkipNext({ color, height, width }: Props) {
   );
 }
 SkipNext.defaultProps = {
-  color: "#333",
+  color: "#1A202C",
   height: "24",
   width: "24",
 };

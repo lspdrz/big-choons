@@ -1,12 +1,14 @@
 import React, { ReactNode, useEffect } from "react";
 import ReactDOM from "react-dom";
 import useModal from "../../hooks/useModal";
+import CloseX from "../icons/CloseX";
 
 type Props = {
   children?: ReactNode;
+  title?: string;
 };
 
-const BaseModal = ({ children }: Props) => {
+const BaseModal = ({ children, title }: Props) => {
   const { closeModal } = useModal();
   const modalRoot = document.getElementById("modal");
   const onEscKeyDown = (e: any) => {
@@ -23,19 +25,29 @@ const BaseModal = ({ children }: Props) => {
     ? ReactDOM.createPortal(
         <div className="flex flex-col fixed z-10 inset-0 overflow-y-auto">
           {/* Roby, please add the x button here and attach closeModal to it */}
-          <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:flex sm:p-0 h-full">
+          <div className="flex items-center justify-center min-h-screen pt-4 px-4 text-center sm:flex h-full">
             <div className="fixed inset-0 transition-opacity">
               <div
-                className="absolute inset-0 bg-gray-500 opacity-75"
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(0deg, rgba(85,60,154,1) 0%, rgba(128,90,213,0.85) 100%)",
+                }}
                 onClick={() => closeModal()}
               ></div>
             </div>
             <div
-              className="inline-block align-bottom bg-white overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+              className="inline-block align-bottom bg-white overflow-hidden shadow-xl transform transition-all w-full sm:w-full md:max-w-2xl"
               role="dialog"
               aria-modal="true"
               aria-labelledby="modal-headline"
             >
+              <div className="flex flex-row justify-between w-full align-center border-b border-gray-400 px-8 py-4 ">
+                <p className="text-lg text-purple-600">{title}</p>
+                <button onClick={() => closeModal()}>
+                  <CloseX />
+                </button>
+              </div>
               {children}
             </div>
           </div>

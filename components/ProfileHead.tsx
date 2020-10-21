@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const ProfileHead = () => {
   return (
-    <div className="bg-white max-w-2xl overflow-hidden flex flex-row m-auto mb-4 p-4 border border-gray-900">
+    <div className="bg-white max-w-xl overflow-hidden flex flex-row ml-4 mb-4 p-4 border border-gray-300 mx-4 sm:mx-6 md:mx-6 lg:mx-8">
       <div
-        className="w-16 h-16 bg-pink-400 rounded-full mr-4"
+        className="w-16 h-16 bg-purple-600 rounded-full mr-4"
         style={{
           backgroundImage: "url('https://thispersondoesnotexist.com/image')",
           backgroundRepeat: "no-repeat",
@@ -15,8 +15,8 @@ const ProfileHead = () => {
       />
       <div className="flex flex-col">
         <div className="flex flex-row items-center">
-          <p className="text-xl mr-2">User Name</p>
-          <p className="text-green-500">
+          <p className="text-xl mr-2">Doug Walsh</p>
+          <p className="text-purple-600">
             <Link href="#">Follow</Link>
           </p>
         </div>

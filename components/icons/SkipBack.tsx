@@ -26,7 +26,7 @@ export default function SkipBack({ color, width, height }: Props) {
 }
 
 SkipBack.defaultProps = {
-  color: "#333",
+  color: "#1A202C",
   height: "24",
   width: "24",
 };

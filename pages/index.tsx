@@ -1,34 +1,16 @@
 import App from "../components/App";
-import { initializeApollo } from "../apollo/client";
-import gql from "graphql-tag";
+// import { sampleUserData } from "../../utils/sample-data";
+// import { User } from "../interfaces";
 
-const UsersQuery = gql`
-  query UsersQuery {
-    users {
-      id
-      name
-    }
-  }
-`;
-const IndexPage = (initialApolloState: any) => {
-  let users = initialApolloState.initialApolloState;
-  delete users.ROOT_QUERY;
-  return <App users={users} />;
+// type Props = {
+//   users: User[];
+// };
+const IndexPage = () => {
+  return <App />;
 };
 
-export const getServerSideProps = async () => {
-  const apolloClient = initializeApollo();
-
-  await apolloClient.query({
-    query: UsersQuery,
-  });
-
-  return {
-    props: {
-      initialApolloState: apolloClient.cache.extract(),
-    },
-    // revalidate: 1,
-  };
-};
+// export const getServerSideProps = async () => {
+//   return { props: { users } };
+// };
 
 export default IndexPage;

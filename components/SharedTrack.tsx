@@ -28,8 +28,6 @@ const SharedTrack = () => (
         </p>
       </div>
       <div className="flex flex-row items-center">
-        {/* ToDo - Ternary for now playing */}
-        <NowPlayingMarquee />
         <Link href="#">
           <OverflowDots color="#1a202c" />
         </Link>
@@ -37,8 +35,12 @@ const SharedTrack = () => (
     </div>
     {/* Card Body */}
     <div className="flex flex-col">
-      <div className="group flex flex-col">
+      <div className="relative">
         {/* Song Thumbnail - ToDo: make seperate component */}
+        <span className="absolute bottom-0 pt-2 pl-4">
+          {/* ToDo - Ternary for now playing */}
+          <NowPlayingMarquee />
+        </span>
         <span
           className="bg-purple-300 mb-3 flex justify-center content-center w-full h-48"
           style={{

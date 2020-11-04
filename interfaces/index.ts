@@ -6,9 +6,9 @@
 
 export type User = {
   id: number;
+  username: string;
   name: string;
   email: string;
-  trackId: number;
 };
 
 export type Track = {

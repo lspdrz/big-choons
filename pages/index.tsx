@@ -8,7 +8,7 @@ type Props = {
 };
 
 const IndexPage = ({users}: Props) => {
-  console.log('hi from index page!!')
+  console.log('List of users:')
   console.log(users)
   return <App />;
 };

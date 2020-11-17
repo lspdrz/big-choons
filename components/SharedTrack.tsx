@@ -29,7 +29,7 @@ const SharedTrack = () => (
       </div>
       <div className="flex flex-row items-center">
         <Link href="#">
-          <OverflowDots color="#1a202c" />
+          <><OverflowDots color="#1a202c" /></>
         </Link>
       </div>
     </div>

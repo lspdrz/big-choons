@@ -7,8 +7,6 @@ import { AppContext } from "./AppContext";
 const Header = () => {
   const { openModal } = useModal();
   const [state] = useContext(AppContext);
-  console.log('hi from header')
-  console.log(state)
   return (
     <nav className="p-2 h-15 w-full bg-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 fixed top-0 z-10 border-b border-gray-300">
       <div className="flex items-center justify-between">

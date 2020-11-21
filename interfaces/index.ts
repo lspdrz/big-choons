@@ -5,9 +5,10 @@
 // import User from 'path/to/interfaces';
 
 export type User = {
-  // id: number;
+  id: number;
   username: string;
-  // email: string;
+  name: string;
+  email: string;
 };
 
 export type Track = {

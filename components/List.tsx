@@ -9,8 +9,7 @@ type Props = {
 const List = ({ items }: Props) => (
   <ul>
     {items.map((item) => (
-      // Temporary fix, change the key back to item.id when User model is complete
-      <li key={item.username}>
+      <li key={item.id}>
         <ListItem data={item} />
       </li>
     ))}

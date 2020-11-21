@@ -7,12 +7,10 @@ const CLIENT_ID: string = process.env.NEXT_PUBLIC_GOOGLE_OAUTH_CLIENT_ID as stri
 
 
 const GoogleLoginButton = () => {
-    const [state, setState] = useContext(AppContext);
+    const [_, setState] = useContext(AppContext);
     
     const login = async (response: any) => {
         if (response.accessToken) {
-            console.log('hi access token from google')
-            console.log(response.accessToken)
             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}auth/google/`, {
                 method: 'POST',
                 headers: {
@@ -24,14 +22,12 @@ const GoogleLoginButton = () => {
             })
             const resJson = await res.json()
             const user = {
-                username: resJson.username
+                id: resJson.id,
+                username: resJson.username,
+                name: resJson.name,
+                email: resJson.email
             }
-            console.log('hi res json')
-            console.log(resJson)
-            console.log(user)
             setState((state: any) => ({ ...state, user: user, jwt: resJson.access_token }));
-            console.log('hiii')
-            console.log(state)
         }
     }
 

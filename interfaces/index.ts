@@ -5,10 +5,9 @@
 // import User from 'path/to/interfaces';
 
 export type User = {
-  id: number;
-  name: string;
-  email: string;
-  trackId: number;
+  // id: number;
+  username: string;
+  // email: string;
 };
 
 export type Track = {

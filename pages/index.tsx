@@ -1,4 +1,4 @@
-import App from "../components/App";
+import AppIndex from "../components/App";
 // import { sampleUserData } from "../../utils/sample-data";
 // import { User } from "../interfaces";
 
@@ -6,7 +6,7 @@ import App from "../components/App";
 //   users: User[];
 // };
 const IndexPage = () => {
-  return <App />;
+  return <AppIndex />;
 };
 
 // export const getServerSideProps = async () => {

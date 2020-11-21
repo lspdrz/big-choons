@@ -1,23 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
 import Layout from "./Layout";
 
 import Modals from "./modals/Modals";
-import { AppProvider } from "./AppContext";
+import { AppContext, AppProvider } from "./AppContext";
 import TrackFeed from "./TrackFeed";
 import AboutButton from "./AboutButton";
-import LoginPage from "./LoginPage";
+import GoogleLoginButton from "./GoogleLogin";
 
-const userAuthenticated = false
 const App = () => {
+  const [state] = useContext(AppContext)
   return (
-    <AppProvider>
+    <>
       <Modals />
       <Layout title="Big Choonz">
-        {userAuthenticated ? <TrackFeed /> : <LoginPage />}
+        {state.user ? <TrackFeed /> : <GoogleLoginButton/>}
       </Layout>
       <AboutButton />
+    </>
+  );
+}
+
+const AppIndex = () => {
+  return (
+    <AppProvider>
+      <App/>
     </AppProvider>
   );
 };
 
-export default App;
+export default AppIndex;

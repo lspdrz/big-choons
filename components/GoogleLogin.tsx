@@ -31,7 +31,9 @@ const GoogleLoginButton = () => {
         }
     }
 
-    const handleLoginFailure = () => {
+    const handleLoginFailure = (response: any) => {
+        console.log('failure from google')
+        console.log(response)
         alert('Failed to log in')
     }
 

@@ -7,7 +7,7 @@ const CLIENT_ID: string = process.env.NEXT_PUBLIC_GOOGLE_OAUTH_CLIENT_ID as stri
 
 
 const GoogleLoginButton = () => {
-    const [_, setState] = useContext(AppContext);
+    const [_state, setState] = useContext(AppContext);
     
     const login = async (response: any) => {
         if (response.accessToken) {

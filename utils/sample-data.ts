@@ -1,10 +1,10 @@
 import { User, Track } from "../interfaces";
 
 /** Dummy user data. */
-export const sampleUserData: User[] = [
-  { id: 101, name: "Roby", email: "roby.saavedra@gmail.com", trackId: 14321 },
-  { id: 102, name: "Luis", email: "luis@lspdrz.com", trackId: 3211 },
-];
+// export const sampleUserData: User[] = [
+//   { id: 101, name: "Roby", email: "roby.saavedra@gmail.com"},
+//   { id: 102, name: "Luis", email: "luis@lspdrz.com" },
+// ];
 
 export const sampleTrackData: Track[] = [
   {

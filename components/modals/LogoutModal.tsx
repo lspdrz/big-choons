@@ -15,14 +15,10 @@ const LogoutModal = () => {
         <BaseModal title="Log out">
             <div className="max-w-2xl flex flex-col">
                 <div className="p-8 flex flex-col focus:border-b focus:border-purple-500">
-                    <div className="w-full flex justify-start">
+                    <div className="w-full flex space-between">
 
-                    <p>Do you really want to log out?</p>
-                    </div>
-                    <div className="w-full flex flex-row justify-end">
-
-                    <button className="bg-white p-4 mr-4 border border-gray-300 hover:bg-gray-200 focus:bg-gray-100 focus:ring-2" onClick={() => closeModal()}>Nevermind</button>
-                    <button className="bg-white p-4 border border-gray-300 hover:bg-gray-200 focus:bg-gray-100 focus:ring-2" onClick={() => logout()}>Yes</button>
+                    <p>Please confirm you want to log out</p>
+                    <button className="bg-red-700 text-white p-4 hover:bg-red-900 focus:bg-gray-100 focus:ring-2" onClick={() => logout()}>Log out</button>
                     </div>
                 </div>
             </div>

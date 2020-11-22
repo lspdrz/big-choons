@@ -6,6 +6,7 @@ import { AppContext, AppProvider } from "./AppContext";
 import TrackFeed from "./TrackFeed";
 import AboutButton from "./AboutButton";
 import GoogleLoginButton from "./auth/GoogleLogin";
+import Spinner from "./Spinner";
 
 const App = () => {
   const [state, setState] = useContext(AppContext)
@@ -21,7 +22,11 @@ const App = () => {
     <>
       <Modals />
       <Layout title="Big Choonz">
-        {state.user ? <TrackFeed /> : <GoogleLoginButton/>}
+        {state.user ? <TrackFeed /> : 
+          
+          <GoogleLoginButton/>
+          }
+      <Spinner />
       </Layout>
       <AboutButton />
     </>

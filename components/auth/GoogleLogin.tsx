@@ -3,7 +3,6 @@ import { GoogleLogin } from 'react-google-login';
 import { AppContext } from '../AppContext';
 import G from './G';
 
-
 const CLIENT_ID: string = process.env.NEXT_PUBLIC_GOOGLE_OAUTH_CLIENT_ID as string;
 
 

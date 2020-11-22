@@ -32,7 +32,7 @@ const GoogleLoginButton = () => {
         }
     }
 
-    const handleLoginFailure = (response: any) => {
+    const handleLoginFailure = (_response: any) => {
         alert('Failed to log in')
     }
 

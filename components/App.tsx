@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Layout from "./Layout";
 
 import Modals from "./modals/Modals";
@@ -8,7 +8,15 @@ import AboutButton from "./AboutButton";
 import GoogleLoginButton from "./GoogleLogin";
 
 const App = () => {
-  const [state] = useContext(AppContext)
+  const [state, setState] = useContext(AppContext)
+
+  useEffect(() => {
+    const user = localStorage.getItem('user')
+    if (user) {
+      setState((state: any) => ({ ...state, user: user }));
+    }
+  }, [])
+
   return (
     <>
       <Modals />

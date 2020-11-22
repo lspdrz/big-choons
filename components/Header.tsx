@@ -28,7 +28,12 @@ const Header = () => {
               <Link href="#">Profile</Link>
             </p>
             <p className="ml-4 text-black">
-              <Link href="#">Logout</Link>
+              <button 
+                className="focus:outline-none"
+                onClick={() => openModal(modalConfirms.LOGOUT_MODAL)}
+              >
+                  Logout
+              </button>
             </p>
           </div> : null}
         </div> 

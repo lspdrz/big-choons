@@ -27,13 +27,12 @@ const GoogleLoginButton = () => {
                 name: resJson.name,
                 email: resJson.email
             }
+            localStorage.setItem("user", JSON.stringify(user));
             setState((state: any) => ({ ...state, user: user, jwt: resJson.access_token }));
         }
     }
 
     const handleLoginFailure = (response: any) => {
-        console.log('failure from google')
-        console.log(response)
         alert('Failed to log in')
     }
 

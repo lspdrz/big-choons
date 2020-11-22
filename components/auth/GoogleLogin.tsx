@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { GoogleLogin } from 'react-google-login';
-import { AppContext } from './AppContext';
+import { AppContext } from '../AppContext';
 
 
 const CLIENT_ID: string = process.env.NEXT_PUBLIC_GOOGLE_OAUTH_CLIENT_ID as string;

@@ -5,7 +5,7 @@ import Modals from "./modals/Modals";
 import { AppContext, AppProvider } from "./AppContext";
 import TrackFeed from "./TrackFeed";
 import AboutButton from "./AboutButton";
-import GoogleLoginButton from "./GoogleLogin";
+import GoogleLoginButton from "./auth/GoogleLogin";
 
 const App = () => {
   const [state, setState] = useContext(AppContext)

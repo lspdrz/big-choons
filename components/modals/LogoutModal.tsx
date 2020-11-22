@@ -14,12 +14,12 @@ const LogoutModal = () => {
     return (
         <BaseModal title="Log out">
             <div className="max-w-2xl flex flex-col">
-                <div className="p-6 flex flex-col items-center focus:border-b focus:border-purple-500">
+                <div className="p-6 flex flex-col focus:border-b focus:border-purple-500">
                     <p>Do you really want to log out?</p>
-                    <div className="w-full flex justify-end">
+                    <div className="w-full flex flex-row justify-end">
 
-                    <button className="bg-white shadow p-4 mx-auto mt-8 border border-gray-300 hover:bg-gray-200 focus:bg-gray-100 focus:ring-2" onClick={() => closeModal()}>Nevermind</button>
-                    <button className="bg-white shadow p-4 mx-auto mt-8 border border-gray-300 hover:bg-gray-200 focus:bg-gray-100 focus:ring-2" onClick={() => logout()}>Yes</button>
+                    <button className="bg-white shadow p-4 mr-8 border-gray-300 hover:bg-gray-200 focus:bg-gray-100 focus:ring-2" onClick={() => closeModal()}>Nevermind</button>
+                    <button className="bg-white shadow p-4 border border-gray-300 hover:bg-gray-200 focus:bg-gray-100 focus:ring-2" onClick={() => logout()}>Yes</button>
                     </div>
                 </div>
             </div>

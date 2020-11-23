@@ -22,7 +22,8 @@ const GoogleLoginButton = () => {
                 },
                 body: JSON.stringify({
                     token: `${response.accessToken}`
-                })
+                }),
+                credentials: 'include',
             })
             const resJson = await res.json()
             const user = {

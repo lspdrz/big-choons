@@ -4,7 +4,7 @@ import { User } from "../interfaces";
 type IAppState = {
   modalId?: String;
   user?: User | null;
-  jwt?: String;
+  jwt?: String | null;
 };
 
 type IAppContext = [IAppState, React.Dispatch<React.SetStateAction<IAppState>>];

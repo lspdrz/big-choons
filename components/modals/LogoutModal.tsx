@@ -7,8 +7,7 @@ const LogoutModal = () => {
     const { closeModal } = useModal();
     const [_state, setState] = useContext(AppContext);
     const logout = () => {
-        localStorage.setItem("user", JSON.stringify(''));
-        setState((state: any) => ({ ...state, user: null }));
+        setState((state: any) => ({ ...state, user: null, jwt: {token: "", expiry: ""} }));
         closeModal()
     }
     return (

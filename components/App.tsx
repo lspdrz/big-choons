@@ -5,28 +5,37 @@ import Modals from "./modals/Modals";
 import { AppContext, AppProvider } from "./AppContext";
 import TrackFeed from "./TrackFeed";
 import AboutButton from "./AboutButton";
-import GoogleLoginButton from "./auth/GoogleLogin";
 import Spinner from "./Spinner";
+import UserAuth from "./auth/UserAuth";
+import jwtManager from './auth/JWTManager'
 
 const App = () => {
-  const [state, setState] = useContext(AppContext)
+  const [state] = useContext(AppContext)
+  const { getRefreshedToken } = jwtManager
 
+  // Check for refresh token if no current JWT
   useEffect(() => {
-    const user = localStorage.getItem('user')
-    if (user) {
-      setState((state: any) => ({ ...state, user: user }));
+    console.log('hi from useEffect in App')
+    const checkAuth = async () => {
+      if (state.jwt === "") {
+        console.log("here in no jwt conditional")
+        const tokenisRefreshed = await getRefreshedToken()
+        console.log('tokenisRefreshed')
+        console.log(tokenisRefreshed)
+      }
     }
+    checkAuth()
   }, [])
+
+
+  console.log('hi from app')
+  console.log(state)
 
   return (
     <>
       <Modals />
       <Layout title="Big Choonz">
-        {state.user ? <TrackFeed /> : 
-          
-          <GoogleLoginButton/>
-          }
-      <Spinner />
+        {state.user ? <TrackFeed /> : <UserAuth/>}
       </Layout>
       <AboutButton />
     </>

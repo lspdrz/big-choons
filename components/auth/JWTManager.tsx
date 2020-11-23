@@ -47,8 +47,9 @@ const JWTManager = () => {
         } else {
             const resJson = await res.json()
             console.log('resJson')
-            if (resJson.token) {
-                setToken(resJson.token, resJson.access_token_expiry)
+            console.log(resJson)
+            if (resJson.access_token) {
+                setToken(resJson.access_token, resJson.access_token_expiry)
                 return true
             }
             return false

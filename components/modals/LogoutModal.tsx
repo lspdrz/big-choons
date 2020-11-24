@@ -1,13 +1,16 @@
 import React, { useContext } from "react";
 import useModal from "../../hooks/useModal";
 import { AppContext } from "../AppContext";
+import JWTManager from "../auth/JWTManager";
 import BaseModal from "./BaseModal";
 
 const LogoutModal = () => {
-    const { closeModal } = useModal();
-    const [_state, setState] = useContext(AppContext);
+    const { closeModal } = useModal()
+    const [_state, setState] = useContext(AppContext)
+    const { eraseToken } = JWTManager
     const logout = () => {
-        setState((state: any) => ({ ...state, user: null, jwt: {token: "", expiry: ""} }));
+        eraseToken()
+        setState((state: any) => ({ ...state, user: null, jwt: {token: "", expiry: ""} }))
         closeModal()
     }
     return (

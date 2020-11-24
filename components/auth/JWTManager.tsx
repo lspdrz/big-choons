@@ -81,6 +81,7 @@ const JWTManager = () => {
 
     const eraseToken = () => {
         jwt = null
+        user = null
         abortRefreshToken();
         if (typeof window !== "undefined") {
             window.localStorage.setItem(logoutEventName, Date.now().toString());

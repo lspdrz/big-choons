@@ -10,8 +10,8 @@ import UserAuth from "./auth/UserAuth";
 import jwtManager from './auth/JWTManager'
 
 const App = () => {
-  const [state] = useContext(AppContext)
-  const { getRefreshedToken } = jwtManager
+  const [state, setState] = useContext(AppContext)
+  const { getRefreshedToken, getToken, getUser } = jwtManager
 
   // Check for refresh token if no current JWT
   useEffect(() => {
@@ -19,9 +19,12 @@ const App = () => {
     const checkAuth = async () => {
       if (state.jwt === "") {
         console.log("here in no jwt conditional")
-        const tokenisRefreshed = await getRefreshedToken()
-        console.log('tokenisRefreshed')
-        console.log(tokenisRefreshed)
+        const tokenIsRefreshed = await getRefreshedToken()
+        if (tokenIsRefreshed) {
+            const user = getUser()
+            const jwt = getToken()
+            setState((state: any) => ({ ...state, user, jwt }));
+        }
       }
     }
     checkAuth()

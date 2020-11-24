@@ -1,8 +1,11 @@
 // Referenced this article: https://marmelab.com/blog/2020/07/02/manage-your-jwt-react-admin-authentication-in-memory.html
 
+import { User } from "../../interfaces";
+
 const JWTManager = () => {
     const logoutEventName = 'big-choons-logout';
     let refreshTimeOutId: number;
+    let user: User | null = null
     let jwt: string | null = null
 
     // This listener allows to disconnect another session of react-admin started in another tab
@@ -17,7 +20,6 @@ const JWTManager = () => {
     // This countdown feature is used to renew the JWT in a way that is transparent to the user.
     // before it's no longer valid
     const refreshToken = (delay: number) => {
-        console.log('in refresh token')
         refreshTimeOutId = window.setTimeout(
             getRefreshedToken,
             delay * 1000 - 5000
@@ -46,30 +48,36 @@ const JWTManager = () => {
             return { token: "", expiry: "" }
         } else {
             const resJson = await res.json()
-            console.log('resJson')
-            console.log(resJson)
+            const refreshedUser: User = {
+                id: resJson.id,
+                username: resJson.username,
+                name: resJson.name,
+                email: resJson.email
+            }
             if (resJson.access_token) {
-                setToken(resJson.access_token, resJson.access_token_expiry)
+                setTokenAndUser(refreshedUser, resJson.access_token, resJson.access_token_expiry)
                 return true
             }
             return false
         }
     };
 
-    const setToken = (token: string, expiry: string) => {
-        console.log('in set token')
+    const setTokenAndUser = (refreshedUser: User, token: string, expiry: string) => {
+        console.log('in setToken and USer')
+        console.log(refreshedUser)
         console.log(token)
-        console.log(expiry)
+        user = refreshedUser
         jwt = token
         const startDate = new Date();
         const endDate = new Date(parseInt(expiry) * 1000)
-        console.log(endDate)
         const delay = (endDate.getTime() - startDate.getTime()) / 1000
         refreshToken(delay);
         return true;
     };
 
     const getToken = () => jwt;
+
+    const getUser = () => user;
 
     const eraseToken = () => {
         jwt = null
@@ -82,8 +90,9 @@ const JWTManager = () => {
 
     return {
         eraseToken,
-        setToken,
+        setTokenAndUser,
         getToken,
+        getUser,
         getRefreshedToken,
     }
 };

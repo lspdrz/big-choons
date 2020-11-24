@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { GoogleLogin } from 'react-google-login';
+import { User } from '../../interfaces';
 import { AppContext } from '../AppContext';
 import G from './G';
 import jwtManager from './JWTManager';
@@ -11,7 +12,7 @@ const CLIENT_ID: string = process.env.NEXT_PUBLIC_GOOGLE_OAUTH_CLIENT_ID as stri
 const GoogleLoginButton = () => {
     const [_state, setState] = useContext(AppContext);
 
-    const {setToken, getToken} = jwtManager
+    const {setTokenAndUser, getToken, getUser} = jwtManager
     
     const login = async (response: any) => {
         if (response.accessToken) {
@@ -26,16 +27,15 @@ const GoogleLoginButton = () => {
                 credentials: 'include',
             })
             const resJson = await res.json()
-            const user = {
+            const userData: User = {
                 id: resJson.id,
                 username: resJson.username,
                 name: resJson.name,
                 email: resJson.email
             }
-            setToken(resJson.access_token, resJson.access_token_expiry)
+            setTokenAndUser(userData, resJson.access_token, resJson.access_token_expiry)
             const jwt = getToken()
-            console.log('hi from google login')
-            console.log(jwt)
+            const user = getUser()
             setState((state: any) => ({ ...state, user, jwt }));
         }
     }

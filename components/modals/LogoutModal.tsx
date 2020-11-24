@@ -8,7 +8,14 @@ const LogoutModal = () => {
     const { closeModal } = useModal()
     const [_state, setState] = useContext(AppContext)
     const { eraseToken } = JWTManager
-    const logout = () => {
+    const logout = async () => {
+        await fetch(`${process.env.NEXT_PUBLIC_API_URL}auth/logout/`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+        })
         eraseToken()
         setState((state: any) => ({ ...state, user: null, jwt: {token: "", expiry: ""} }))
         closeModal()

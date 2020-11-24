@@ -17,7 +17,7 @@ const AppProvider = (props: any) => {
     modalId: "",
     user: null,
     jwt: "",
-    checkingAuth: false,
+    checkingAuth: true,
   });
   return (
     <AppContext.Provider value={[state, setState]}>

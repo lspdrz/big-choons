@@ -5,7 +5,7 @@ type IAppState = {
   modalId?: String;
   user?: User | null;
   jwt?: String | null;
-  checkingAuth: boolean;
+  checkingAuth?: boolean;
 };
 
 type IAppContext = [IAppState, React.Dispatch<React.SetStateAction<IAppState>>];

@@ -5,6 +5,7 @@ type IAppState = {
   modalId?: String;
   user?: User | null;
   jwt?: String | null;
+  checkingAuth: boolean;
 };
 
 type IAppContext = [IAppState, React.Dispatch<React.SetStateAction<IAppState>>];
@@ -16,6 +17,7 @@ const AppProvider = (props: any) => {
     modalId: "",
     user: null,
     jwt: "",
+    checkingAuth: false,
   });
   return (
     <AppContext.Provider value={[state, setState]}>

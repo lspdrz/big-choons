@@ -16,6 +16,7 @@ const GoogleLoginButton = () => {
     
     const login = async (response: any) => {
         if (response.accessToken) {
+            setState((state: any) => ({...state, checkingAuth: true}))
             const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}auth/google/`, {
                 method: 'POST',
                 headers: {
@@ -36,7 +37,7 @@ const GoogleLoginButton = () => {
             setTokenAndUser(userData, resJson.access_token, resJson.access_token_expiry)
             const jwt = getToken()
             const user = getUser()
-            setState((state: any) => ({ ...state, user, jwt }));
+            setState((state: any) => ({ ...state, user, jwt, checkingAuth: false}));
         }
     }
 

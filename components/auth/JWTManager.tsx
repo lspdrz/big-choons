@@ -35,7 +35,6 @@ const JWTManager = () => {
     // The method makes a call to the refresh-token endpoint
     // If there is a valid cookie, the endpoint will return a fresh jwt.
     const getRefreshedToken = async () => {
-        console.log('in get refreshed token!!!')
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}auth/token/refresh/`, {
             method: 'GET',
             headers: {
@@ -63,9 +62,6 @@ const JWTManager = () => {
     };
 
     const setTokenAndUser = (refreshedUser: User, token: string, expiry: string) => {
-        console.log('in setToken and USer')
-        console.log(refreshedUser)
-        console.log(token)
         user = refreshedUser
         jwt = token
         const startDate = new Date();

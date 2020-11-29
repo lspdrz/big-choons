@@ -6,14 +6,14 @@ import Play from "./icons/Play";
 import SkipNext from "./icons/SkipNext";
 
 const Player = () => (
-  <section className="w-full border-t border-gray-300 bg-white h-20 fixed bottom-0 px-4 sm:px-6 lg:px-8">
+  <section className="w-full border-t border-gray-300 bg-white h-16 fixed bottom-0 px-4 sm:px-6 lg:px-8">
     <div className="flex flex-row justify-between w-full h-full">
       {/* PLAYER CONTROLS */}
       <div className="flex flex-row justify-self-start items-center">
         <button className="p-2 mr-2">
           <SkipBack />
         </button>
-        <button className="p-4 mr-2 rounded-full bg-purple-600">
+        <button className="p-3 mr-2 rounded-full bg-purple-600">
           <Play />
         </button>
         <button className="p-2 mr-2">
@@ -24,7 +24,7 @@ const Player = () => (
       <div className="group flex flex-row items-center">
         {/* Song Thumbnail - ToDo: make seperate component */}
         <span
-          className="w-16 h-16 bg-yellow-300 mr-2 flex justify-center content-center"
+          className="w-12 h-12 bg-yellow-300 mr-2 flex justify-center content-center"
           style={{
             backgroundImage:
               "url('http://img.youtube.com/vi/othRjM828bk/0.jpg')",
@@ -39,11 +39,10 @@ const Player = () => (
           </button>
         </span>
         <div className="flex flex-col content-center">
-          <p className="text-xs text-gray-600">
-            Shared by <Link href="#">Goldie Alexander</Link> (Expires in
-            22:42:42)
+          <p className="text-xs text-purple-600">
+            Shared by <Link href="#">Goldie Alexander</Link>
           </p>
-          <p className="text-lg hover:underline">
+          <p className="text-sm hover:underline">
             <Link href="#">The Heinz Kiessling Orchestra - Remember Rio</Link>
           </p>
         </div>

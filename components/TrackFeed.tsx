@@ -5,7 +5,7 @@ const TrackFeed = () => (
   <div
     className="w-100 px-4 sm:px-6 md:px-6 lg:px-8"
     style={{
-      height: "calc(100vh - 120px)",
+      height: "calc(100vh - 104px)",
       overflowY: "scroll",
     }}
   >

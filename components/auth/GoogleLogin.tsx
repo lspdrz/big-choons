@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { GoogleLogin } from 'react-google-login';
 import { User } from '../../interfaces';
 import { AppContext } from '../AppContext';
-import G from './G';
+import G from '../icons/G';
 import jwtManager from './JWTManager';
 
 

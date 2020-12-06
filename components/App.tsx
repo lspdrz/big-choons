@@ -36,15 +36,17 @@ const App = () => {
   return (
     <>
       <Modals />
-      <Layout title="Big Choonz">
-        {
-          ! state.checkingAuth
+      {
+        ! state.checkingAuth
           ?
-          state.user ? <TrackFeed /> : <UserAuth/>
+          <Layout title="Big Choonz">
+            {
+              state.user ? <TrackFeed /> : <UserAuth/>
+            }
+          </Layout>
           :
-          <Spinner />
-        }
-      </Layout>
+            <Spinner />
+      }
       <AboutButton />
     </>
   );

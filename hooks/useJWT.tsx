@@ -1,3 +1,6 @@
+// Referenced this article:
+// https://marmelab.com/blog/2020/07/02/manage-your-jwt-react-admin-authentication-in-memory.html
+
 import { useContext } from "react";
 import { AppContext } from "../components/AppContext";
 import { User } from "../interfaces";

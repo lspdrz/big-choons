@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
+import useJWT from "../../hooks/useJWT";
 import useModal from "../../hooks/useModal";
 import { AppContext } from "../AppContext";
-import JWTManager from "../auth/JWTManager";
 import BaseModal from "./BaseModal";
 
 const LogoutModal = () => {
     const { closeModal } = useModal()
     const [_state, setState] = useContext(AppContext)
-    const { eraseToken } = JWTManager
+    const { eraseToken } = useJWT()
     const logout = async () => {
         setState((state: any) => ({...state, checkingAuth: true}))
         await fetch(`${process.env.NEXT_PUBLIC_API_URL}auth/logout/`, {
@@ -18,9 +18,6 @@ const LogoutModal = () => {
             credentials: 'include',
         })
         eraseToken()
-        setState((state: any) => (
-            { ...state, user: null, jwt: "", checkingAuth: false }
-        ))
         closeModal()
     }
     return (

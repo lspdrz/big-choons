@@ -7,26 +7,18 @@ import TrackFeed from "./TrackFeed";
 import AboutButton from "./AboutButton";
 import Spinner from "./Spinner";
 import UserAuth from "./auth/UserAuth";
-import jwtManager from './auth/JWTManager'
+import useJWT from "../hooks/useJWT";
 
 const App = () => {
   const [state, setState] = useContext(AppContext)
-  const { getRefreshedToken, getToken, getUser } = jwtManager
+  const { getRefreshedToken, user, checkingAuth } = useJWT()
 
   // Check for refresh token if no current JWT
   useEffect(() => {
     const checkAuth = async () => {
       try {
         if (state.jwt === "") {
-          const tokenIsRefreshed = await getRefreshedToken()
-          if (tokenIsRefreshed) {
-              const user = getUser()
-              const jwt = getToken()
-              setState((state: any) => ({ ...state, user, jwt, checkingAuth: false }));
-          }
-          else {
-            setState((state: any) => ({...state, checkingAuth: false}))
-          }
+          await getRefreshedToken()
         } 
       } catch { setState((state: any) => ({...state, checkingAuth: false})) }
     }
@@ -37,11 +29,11 @@ const App = () => {
     <>
       <Modals />
       {
-        ! state.checkingAuth
+        !checkingAuth
           ?
           <Layout title="Big Choonz">
             {
-              state.user ? <TrackFeed /> : <UserAuth/>
+              user ? <TrackFeed /> : <UserAuth/>
             }
           </Layout>
           :

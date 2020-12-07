@@ -1,4 +1,4 @@
-import AppIndex from '../components/App'
+import AppIndex from 'components/App'
 
 const IndexPage: React.FC = () => {
   return <AppIndex />

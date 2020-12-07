@@ -1,5 +1,6 @@
 import React from 'react'
-import Smile from './icons/Smile'
+
+import Smile from 'components/Icons/Smile'
 
 const AboutButton: React.FC = () => (
   <span className="bg-white rounded-full shadow p-1 fixed bottom-0 right-0 mb-24 mr-2">

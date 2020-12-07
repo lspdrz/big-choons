@@ -12,7 +12,15 @@ module.exports = {
       {
         files: ['**/*.ts', '**/*.tsx'],
         parser: '@typescript-eslint/parser',
-        settings: { react: { version: 'detect' } },
+        settings: { 
+          react: { version: 'detect' },
+          'import/resolver': {
+            node: {
+                extensions: ['.js', '.jsx', '.ts', '.tsx'],
+                moduleDirectory: ['node_modules', '.'],
+            },
+        },
+        },
         env: {
           browser: true,
           node: true,
@@ -26,6 +34,11 @@ module.exports = {
           'plugin:jsx-a11y/recommended', // Accessibility rules
           'prettier/@typescript-eslint', // Prettier plugin
           'plugin:prettier/recommended', // Prettier recommended rules 
+          'plugin:import/errors', // No Relative Import plugin
+          'plugin:import/warnings', // No Relative Import plugin
+          "plugin:import/errors",
+          "plugin:import/warnings",
+          "plugin:import/typescript",
         ],
         rules: {
           // We will use TypeScript's types for component props instead
@@ -49,6 +62,22 @@ module.exports = {
             },
           ],
           'prettier/prettier': ['error', {}, { usePrettierrc: true }], // Includes .prettierrc.js rules
+          "import/no-unresolved": "off",
+          "import/named": "warn",
+          "import/namespace": "warn",
+          "import/no-named-as-default": "off",
+          "import/export": "warn",
+          "import/order": [
+            "error",
+            {
+              "groups": ["builtin", "external", "parent", "sibling", "index"],
+              "newlines-between": "always",
+              "alphabetize": {
+                "order": "asc",
+                "caseInsensitive": true
+              }
+            }
+          ]
         },
       },
     ],

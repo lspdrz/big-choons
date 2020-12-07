@@ -1,14 +1,14 @@
 import React, { useContext, useEffect } from 'react'
-import Layout from './Layout'
+import Layout from 'components/Layout'
 
-import Modals from './modals/Modals'
-import { AppContext, AppProvider } from './AppContext'
-import TrackFeed from './TrackFeed'
-import AboutButton from './AboutButton'
-import Spinner from './Spinner'
-import UserAuth from './auth/UserAuth'
-import useJWT from '../hooks/useJWT'
-import { AppState } from '../interfaces'
+import Modals from 'components/modals/Modals'
+import { AppContext, AppProvider } from 'components/AppContext'
+import TrackFeed from 'components/TrackFeed'
+import AboutButton from 'components/AboutButton'
+import Spinner from 'components/Spinner'
+import UserAuth from 'components/auth/UserAuth'
+import useJWT from 'hooks/useJWT'
+import { AppState } from 'interfaces'
 
 const App: React.FC = () => {
   const [, setState] = useContext(AppContext)

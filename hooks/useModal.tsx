@@ -1,6 +1,6 @@
 import { useContext } from 'react'
-import { AppContext } from '../components/AppContext'
-import { AppState } from '../interfaces'
+import { AppContext } from 'components/AppContext'
+import { AppState } from 'interfaces'
 
 type useModalReturnType = {
   openModal: (modalId: string) => void

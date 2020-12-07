@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import useJWT from '../../hooks/useJWT'
-import useModal from '../../hooks/useModal'
-import { AppState } from '../../interfaces'
-import { AppContext } from '../AppContext'
-import BaseModal from './BaseModal'
+import useJWT from 'hooks/useJWT'
+import useModal from 'hooks/useModal'
+import { AppState } from 'interfaces'
+import { AppContext } from 'components/AppContext'
+import BaseModal from 'components/modals/BaseModal'
 
 const LogoutModal: React.FC = () => {
   const { closeModal } = useModal()

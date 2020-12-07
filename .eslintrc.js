@@ -12,7 +12,15 @@ module.exports = {
       {
         files: ['**/*.ts', '**/*.tsx'],
         parser: '@typescript-eslint/parser',
-        settings: { react: { version: 'detect' } },
+        settings: { 
+          react: { version: 'detect' },
+          'import/resolver': {
+            node: {
+                extensions: ['.js', '.jsx', '.ts', '.tsx'],
+                moduleDirectory: ['node_modules', '.'],
+            },
+        },
+        },
         env: {
           browser: true,
           node: true,
@@ -26,6 +34,8 @@ module.exports = {
           'plugin:jsx-a11y/recommended', // Accessibility rules
           'prettier/@typescript-eslint', // Prettier plugin
           'plugin:prettier/recommended', // Prettier recommended rules 
+          'plugin:import/errors', // No Relative Import plugin
+          'plugin:import/warnings', // No Relative Import plugin
         ],
         rules: {
           // We will use TypeScript's types for component props instead

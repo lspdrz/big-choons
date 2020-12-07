@@ -1,5 +1,5 @@
 import React from 'react'
-import GoogleLoginButton from './GoogleLogin'
+import GoogleLoginButton from 'components/auth/GoogleLogin'
 
 const UserAuth: React.FC = () => {
   return (

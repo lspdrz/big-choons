@@ -1,5 +1,5 @@
 import React from 'react'
-import SharedTrack from './SharedTrack'
+import SharedTrack from 'components/SharedTrack'
 
 const TrackFeed: React.FC = () => (
   <div

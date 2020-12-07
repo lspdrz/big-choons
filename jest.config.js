@@ -14,7 +14,6 @@ module.exports = {
       '^constants/confirms(.*)$': '<rootDir>/constants/confirms$1',
       '^hooks(.*)$': '<rootDir>/hooks$1',
       '^interfaces(.*)$': '<rootDir>/interfaces$1',
-      '^pages(.*)$': '<rootDir>/pages$1',
       '^styles(.*)$': '<rootDir>/styles$1',
       '^utils(.*)$': '<rootDir>/utils$1',
     },

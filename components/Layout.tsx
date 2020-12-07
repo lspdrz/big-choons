@@ -1,20 +1,18 @@
-import React, { ReactNode } from "react";
-// import Link from 'next/link'
-
-import Head from "next/head";
-import Header from "./Header";
-import Player from "./Player";
+import React, { ReactNode } from 'react'
+import Head from 'next/head'
+import Header from './Header'
+import Player from './Player'
 
 type Props = {
-  children?: ReactNode;
-  title?: string;
-};
+  children?: ReactNode
+  title?: string
+}
 
-const Layout = ({ children, title = "This is the default title" }: Props) => (
+const Layout: React.FC<Props> = ({ children, title = 'This is the default title' }: Props) => (
   <div
     className="absolute top-0 bottom-0 left-0 right-0 overflow-hidden"
     style={{
-      paddingTop: "40px",
+      paddingTop: '40px',
     }}
   >
     <Head>
@@ -26,6 +24,6 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
     {children}
     <Player />
   </div>
-);
+)
 
-export default Layout;
+export default Layout

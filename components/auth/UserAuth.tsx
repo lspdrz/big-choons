@@ -1,13 +1,12 @@
-import React, { useContext } from "react";
-import { AppContext } from "../AppContext";
-import GoogleLoginButton from "./GoogleLogin";
+import React from 'react'
+import GoogleLoginButton from './GoogleLogin'
 
-const UserAuth = () => {
-    return (
-        <>
-           <GoogleLoginButton />
-        </>
-    );
-};
+const UserAuth: React.FC = () => {
+  return (
+    <>
+      <GoogleLoginButton />
+    </>
+  )
+}
 
-export default UserAuth;
+export default UserAuth

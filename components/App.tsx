@@ -1,55 +1,55 @@
-import React, { useContext, useEffect, useState } from "react";
-import Layout from "./Layout";
+import React, { useContext, useEffect } from 'react'
+import Layout from './Layout'
 
-import Modals from "./modals/Modals";
-import { AppContext, AppProvider } from "./AppContext";
-import TrackFeed from "./TrackFeed";
-import AboutButton from "./AboutButton";
-import Spinner from "./Spinner";
-import UserAuth from "./auth/UserAuth";
-import useJWT from "../hooks/useJWT";
+import Modals from './modals/Modals'
+import { AppContext, AppProvider } from './AppContext'
+import TrackFeed from './TrackFeed'
+import AboutButton from './AboutButton'
+import Spinner from './Spinner'
+import UserAuth from './auth/UserAuth'
+import useJWT from '../hooks/useJWT'
+import { AppState } from '../interfaces'
 
-const App = () => {
-  const [state, setState] = useContext(AppContext)
-  const { getRefreshedToken, user, checkingAuth } = useJWT()
+const App: React.FC = () => {
+  const [, setState] = useContext(AppContext)
+  const { getRefreshedToken, user, jwt, checkingAuth } = useJWT()
 
   // Check for refresh token if no current JWT
   useEffect(() => {
-    const checkAuth = async () => {
+    const checkAuth = async (): Promise<void> => {
       try {
-        if (state.jwt === "") {
+        if (!jwt) {
           await getRefreshedToken()
-        } 
-      } catch { setState((state: any) => ({...state, checkingAuth: false})) }
+        } else {
+          setState((state: AppState) => ({ ...state, checkingAuth: false }))
+        }
+      } catch {
+        setState((state: AppState) => ({ ...state, checkingAuth: false }))
+      }
     }
     checkAuth()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-  
+
   return (
     <>
       <Modals />
-      {
-        !checkingAuth
-          ?
-          <Layout title="Big Choonz">
-            {
-              user ? <TrackFeed /> : <UserAuth/>
-            }
-          </Layout>
-          :
-            <Spinner />
-      }
+      {!checkingAuth ? (
+        <Layout title="Big Choonz">{user ? <TrackFeed /> : <UserAuth />}</Layout>
+      ) : (
+        <Spinner />
+      )}
       <AboutButton />
     </>
-  );
+  )
 }
 
-const AppIndex = () => {
+const AppIndex: React.FC = () => {
   return (
     <AppProvider>
-      <App/>
+      <App />
     </AppProvider>
-  );
-};
+  )
+}
 
-export default AppIndex;
+export default AppIndex

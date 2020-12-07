@@ -1,15 +1,11 @@
-import Document, {
-  Html,
-  Head,
-  Main,
-  NextScript,
-  DocumentContext,
-} from "next/document";
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
-    const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
+    const initialProps = await Document.getInitialProps(ctx)
+    return { ...initialProps }
   }
 
   render() {
@@ -22,8 +18,7 @@ class MyDocument extends Document {
           //   "-moz-linear-gradient(0deg, rgba(254,215,226,1) 0%, rgba(247,250,252,1) 15%)",
           // background:
           //   "-webkit-linear-gradient(0deg, rgba(254,215,226,1) 0%, rgba(247,250,252,1) 15%)",
-          background:
-            "linear-gradient(0deg, rgba(233,216,253,1) 0%, rgba(255,255,255,1) 18%)",
+          background: 'linear-gradient(0deg, rgba(233,216,253,1) 0%, rgba(255,255,255,1) 18%)',
         }}
       >
         <Head />
@@ -33,8 +28,8 @@ class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    );
+    )
   }
 }
 
-export default MyDocument;
+export default MyDocument

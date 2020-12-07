@@ -1,16 +1,7 @@
-import AppIndex from "../components/App";
-// import { sampleUserData } from "../../utils/sample-data";
-// import { User } from "../interfaces";
+import AppIndex from '../components/App'
 
-// type Props = {
-//   users: User[];
-// };
-const IndexPage = () => {
-  return <AppIndex />;
-};
+const IndexPage: React.FC = () => {
+  return <AppIndex />
+}
 
-// export const getServerSideProps = async () => {
-//   return { props: { users } };
-// };
-
-export default IndexPage;
+export default IndexPage

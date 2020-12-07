@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react'
 
 type Props = {
-  color?: string;
-  width?: string;
-  height?: string;
-};
+  color?: string
+  width?: string
+  height?: string
+}
 
-export default function Search({ color, height, width }: Props) {
+const Search: React.FC<Props> = ({ color, height, width }: Props) => {
   return (
     <svg
       width={width}
@@ -22,10 +22,13 @@ export default function Search({ color, height, width }: Props) {
         fill={color}
       />
     </svg>
-  );
+  )
 }
+
 Search.defaultProps = {
-  color: "#1A202C",
-  height: "24",
-  width: "24",
-};
+  color: '#1A202C',
+  height: '24',
+  width: '24',
+}
+
+export default Search

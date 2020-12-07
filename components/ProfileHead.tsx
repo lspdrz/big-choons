@@ -1,16 +1,16 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react'
+import Link from 'next/link'
 
-const ProfileHead = () => {
+const ProfileHead: React.FC = () => {
   return (
     <div className="bg-white max-w-xl overflow-hidden flex flex-row ml-4 mb-4 p-4 border border-gray-300 mx-4 sm:mx-6 md:mx-6 lg:mx-8">
       <div
         className="w-16 h-16 bg-purple-600 rounded-full mr-4"
         style={{
           backgroundImage: "url('https://thispersondoesnotexist.com/image')",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
         }}
       />
       <div className="flex flex-col">
@@ -30,6 +30,6 @@ const ProfileHead = () => {
         </div>
       </div>
     </div>
-  );
-};
-export default ProfileHead;
+  )
+}
+export default ProfileHead

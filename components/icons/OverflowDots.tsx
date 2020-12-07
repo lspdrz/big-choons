@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react'
 
 type Props = {
-  color?: string;
-  width?: string;
-  height?: string;
-};
+  color?: string
+  width?: string
+  height?: string
+}
 
-export default function OverflowDots({ color, width, height }: Props) {
+const OverflowDots: React.FC<Props> = ({ color, width, height }: Props) => {
   return (
     <svg
       width={width}
@@ -28,11 +28,13 @@ export default function OverflowDots({ color, width, height }: Props) {
         fill={color}
       />
     </svg>
-  );
+  )
 }
 
 OverflowDots.defaultProps = {
-  color: "#1a202c",
-  width: "24",
-  height: "24",
-};
+  color: '#1a202c',
+  width: '24',
+  height: '24',
+}
+
+export default OverflowDots

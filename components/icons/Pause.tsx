@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react'
 
 type Props = {
-  color?: string;
-  width?: string;
-  height?: string;
-};
+  color?: string
+  width?: string
+  height?: string
+}
 
-export default function Pause({ color, width, height }: Props) {
+const Pause: React.FC<Props> = ({ color, width, height }: Props) => {
   return (
     <svg
       width={width}
@@ -24,11 +24,13 @@ export default function Pause({ color, width, height }: Props) {
         fill={color}
       />
     </svg>
-  );
+  )
 }
 
 Pause.defaultProps = {
-  color: "white",
-  width: "24",
-  height: "24",
-};
+  color: 'white',
+  width: '24',
+  height: '24',
+}
+
+export default Pause

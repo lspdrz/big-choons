@@ -1,29 +1,21 @@
-import React, { createContext, useState } from "react";
-import { User } from "../interfaces";
+import React, { createContext, useState } from 'react'
+import { AppState } from '../interfaces'
 
-type IAppState = {
-  modalId?: String;
-  user?: User | null;
-  jwt?: String | null;
-  checkingAuth?: boolean;
-};
+type IAppContext = [AppState, React.Dispatch<React.SetStateAction<AppState>>]
 
-type IAppContext = [IAppState, React.Dispatch<React.SetStateAction<IAppState>>];
+const AppContext = createContext<IAppContext>([
+  { modalId: '', user: null, jwt: null, checkingAuth: true },
+  () => null,
+])
 
-const AppContext = createContext<IAppContext>([{}, () => null]);
-
-const AppProvider = (props: any) => {
-  const [state, setState] = useState<IAppState>({
-    modalId: "",
+const AppProvider: React.FC = (props: { children?: React.ReactNode }) => {
+  const [state, setState] = useState<AppState>({
+    modalId: '',
     user: null,
-    jwt: "",
+    jwt: null,
     checkingAuth: true,
-  });
-  return (
-    <AppContext.Provider value={[state, setState]}>
-      {props.children}
-    </AppContext.Provider>
-  );
-};
+  })
+  return <AppContext.Provider value={[state, setState]}>{props.children}</AppContext.Provider>
+}
 
-export { AppContext, AppProvider };
+export { AppContext, AppProvider }

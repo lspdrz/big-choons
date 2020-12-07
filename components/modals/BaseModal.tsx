@@ -1,39 +1,43 @@
-import React, { ReactNode, useEffect } from "react";
-import ReactDOM from "react-dom";
-import useModal from "../../hooks/useModal";
-import CloseX from "../icons/CloseX";
+import React, { ReactNode, useEffect } from 'react'
+import ReactDOM from 'react-dom'
+import useModal from '../../hooks/useModal'
+import CloseX from '../icons/CloseX'
 
 type Props = {
-  children?: ReactNode;
-  title?: string;
-};
+  children?: ReactNode
+  title?: string
+}
 
-const BaseModal = ({ children, title }: Props) => {
-  const { closeModal } = useModal();
-  const modalRoot = document.getElementById("modal");
-  const onEscKeyDown = (e: any) => {
-    if (e.key !== "Escape") return;
-    closeModal();
-  };
+const BaseModal: React.FC<Props> = ({ children, title }: Props) => {
+  const { closeModal } = useModal()
+  const modalRoot = document.getElementById('modal')
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const onEscKeyDown = (e: any): void => {
+    if (e.key !== 'Escape') return
+    closeModal()
+  }
 
   useEffect(() => {
-    window.addEventListener("keydown", onEscKeyDown, false);
-    return () => window.removeEventListener("keydown", onEscKeyDown, false);
-  }, []);
+    window.addEventListener('keydown', onEscKeyDown, false)
+    return () => window.removeEventListener('keydown', onEscKeyDown, false)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return modalRoot
     ? ReactDOM.createPortal(
         <div className="flex flex-col fixed z-10 inset-0 overflow-y-auto">
-          {/* Roby, please add the x button here and attach closeModal to it */}
           <div className="flex items-center justify-center min-h-screen pt-4 px-4 text-center sm:flex h-full">
             <div className="fixed inset-0 transition-opacity">
               <div
                 className="absolute inset-0"
+                role="button"
+                tabIndex={0}
                 style={{
                   background:
-                    "linear-gradient(0deg, rgba(85,60,154,1) 0%, rgba(128,90,213,0.85) 100%)",
+                    'linear-gradient(0deg, rgba(85,60,154,1) 0%, rgba(128,90,213,0.85) 100%)',
                 }}
                 onClick={() => closeModal()}
+                onKeyDown={() => closeModal()}
               ></div>
             </div>
             <div
@@ -54,7 +58,7 @@ const BaseModal = ({ children, title }: Props) => {
         </div>,
         modalRoot
       )
-    : null;
-};
+    : null
+}
 
-export default BaseModal;
+export default BaseModal

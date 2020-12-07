@@ -1,8 +1,8 @@
-import React from "react";
-import Search from "../icons/Search";
-import BaseModal from "./BaseModal";
+import React from 'react'
+import Search from '../icons/Search'
+import BaseModal from './BaseModal'
 
-const SearchModal = () => (
+const SearchModal: React.FC = () => (
   <BaseModal title="Choose a song">
     <div className="max-w-2xl flex flex-col">
       <form className="bg-white px-8 py-8">
@@ -23,6 +23,6 @@ const SearchModal = () => (
       </form>
     </div>
   </BaseModal>
-);
+)
 
-export default SearchModal;
+export default SearchModal

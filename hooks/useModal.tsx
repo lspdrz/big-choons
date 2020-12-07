@@ -1,22 +1,29 @@
-import { useContext } from "react";
-import { AppContext } from "../components/AppContext";
+import { useContext } from 'react'
+import { AppContext } from '../components/AppContext'
+import { AppState } from '../interfaces'
 
-const useModal = () => {
-  const [state, setState] = useContext(AppContext);
+type useModalReturnType = {
+  openModal: (modalId: string) => void
+  closeModal: () => void
+  modalId: string | undefined
+}
 
-  const openModal = (modalId: String) => {
-    setState((state: any) => ({ ...state, modalId: modalId }));
-  };
+const useModal = (): useModalReturnType => {
+  const [state, setState] = useContext(AppContext)
 
-  const closeModal = () => {
-    setState((state: any) => ({ ...state, modalId: "" }));
-  };
+  const openModal = (modalId: string): void => {
+    setState((state: AppState) => ({ ...state, modalId: modalId }))
+  }
+
+  const closeModal = (): void => {
+    setState((state: AppState) => ({ ...state, modalId: '' }))
+  }
 
   return {
     openModal,
     closeModal,
     modalId: state.modalId,
-  };
-};
+  }
+}
 
-export default useModal;
+export default useModal

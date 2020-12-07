@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react'
 
 type Props = {
-  color?: string;
-  width?: string;
-  height?: string;
-};
+  color?: string
+  width?: string
+  height?: string
+}
 
-export default function Play({ color, width, height }: Props) {
+const Play: React.FC<Props> = ({ color, width, height }: Props) => {
   return (
     <svg
       width={width}
@@ -20,11 +20,13 @@ export default function Play({ color, width, height }: Props) {
         fill={color}
       />
     </svg>
-  );
+  )
 }
 
 Play.defaultProps = {
-  color: "white",
-  width: "24",
-  height: "24",
-};
+  color: 'white',
+  width: '24',
+  height: '24',
+}
+
+export default Play

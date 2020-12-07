@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import Link from 'next/link'
-import Volume from 'components/icons/Volume'
-import SkipBack from 'components/icons/SkipBack'
-import Play from 'components/icons/Play'
-import SkipNext from 'components/icons/SkipNext'
-import { AppContext } from 'components/AppContext'
+import Volume from 'components/Icons/Volume'
+import SkipBack from 'components/Icons/SkipBack'
+import Play from 'components/Icons/Play'
+import SkipNext from 'components/Icons/SkipNext'
+import { AppContext } from 'components/App/AppContext'
 
 const Player: React.FC = () => {
   const [state] = useContext(AppContext)

@@ -1,12 +1,12 @@
 import React, { useContext, useEffect } from 'react'
 import Layout from 'components/Layout'
 
-import Modals from 'components/modals/Modals'
-import { AppContext, AppProvider } from 'components/AppContext'
-import TrackFeed from 'components/TrackFeed'
+import Modals from 'components/Modals'
+import { AppContext, AppProvider } from 'components/App/AppContext'
+import Home from 'components/Home'
 import AboutButton from 'components/AboutButton'
-import Spinner from 'components/Spinner'
-import UserAuth from 'components/auth/UserAuth'
+import Spinner from 'components/Icons/Spinner'
+import UserAuth from 'components/UserAuth'
 import useJWT from 'hooks/useJWT'
 import { AppState } from 'interfaces'
 
@@ -35,7 +35,7 @@ const App: React.FC = () => {
     <>
       <Modals />
       {!checkingAuth ? (
-        <Layout title="Big Choonz">{user ? <TrackFeed /> : <UserAuth />}</Layout>
+        <Layout title="Big Choonz">{user ? <Home /> : <UserAuth />}</Layout>
       ) : (
         <Spinner />
       )}

@@ -1,7 +1,7 @@
 import modalConfirms from 'constants/confirms/modalConfirms'
 
-import SearchModal from 'components/modals/SearchModal'
-import LogoutModal from 'components/modals/LogoutModal'
+import SearchModal from 'components/Modals/SearchModal'
+import LogoutModal from 'components/Modals/LogoutModal'
 import useModal from 'hooks/useModal'
 
 const Modals = (): JSX.Element | null => {

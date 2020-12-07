@@ -2,12 +2,12 @@ import React, { useContext } from 'react'
 import { GoogleLogin } from 'react-google-login'
 import useJWT from 'hooks/useJWT'
 import { AppState, User } from 'interfaces'
-import { AppContext } from 'components/AppContext'
-import G from 'components/icons/G'
+import { AppContext } from 'components/App/AppContext'
+import G from 'components/Icons/G'
 
 const CLIENT_ID: string = process.env.NEXT_PUBLIC_GOOGLE_OAUTH_CLIENT_ID as string
 
-const GoogleLoginButton: React.FC = () => {
+const GoogleAuth: React.FC = () => {
   const [, setState] = useContext(AppContext)
 
   const { setTokenAndUser } = useJWT()
@@ -65,4 +65,4 @@ const GoogleLoginButton: React.FC = () => {
     />
   )
 }
-export default GoogleLoginButton
+export default GoogleAuth

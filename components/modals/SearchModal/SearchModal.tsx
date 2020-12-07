@@ -1,6 +1,6 @@
 import React from 'react'
-import Search from 'components/icons/Search'
-import BaseModal from 'components/modals/BaseModal'
+import Search from 'components/Icons/Search'
+import BaseModal from 'components/Modals/BaseModal'
 
 const SearchModal: React.FC = () => (
   <BaseModal title="Choose a song">

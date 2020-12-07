@@ -1,10 +1,10 @@
 import renderer from 'react-test-renderer'
 
-import IndexPage from 'pages/index'
+import AppIndex from 'components/App'
 
-describe('Index page', () => {
+describe('App Index page', () => {
   it('should match the snapshot', () => {
-    const tree = renderer.create(<IndexPage />).toJSON()
+    const tree = renderer.create(<AppIndex />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

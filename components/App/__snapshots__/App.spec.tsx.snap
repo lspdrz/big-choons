@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Index page should match the snapshot 1`] = `
+exports[`App Index page should match the snapshot 1`] = `
 Array [
   <svg
     className="animate-spin my-8 mx-auto"

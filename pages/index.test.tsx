@@ -1,4 +1,5 @@
 import renderer from 'react-test-renderer'
+
 import IndexPage from 'pages/index'
 
 describe('Index page', () => {

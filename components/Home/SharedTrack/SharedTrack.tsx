@@ -1,8 +1,9 @@
-import React from 'react'
 import Link from 'next/link'
+import React from 'react'
+
+import NowPlayingMarquee from 'components/Home/NowPlayingMarquee'
 import OverflowDots from 'components/Icons/OverflowDots'
 import Play from 'components/Icons/Play'
-import NowPlayingMarquee from 'components/Home/NowPlayingMarquee'
 
 const SharedTrack: React.FC = () => (
   // Shared track card

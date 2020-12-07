@@ -1,7 +1,8 @@
 import React, { ReactNode, useEffect } from 'react'
 import ReactDOM from 'react-dom'
-import useModal from 'hooks/useModal'
+
 import CloseX from 'components/Icons/CloseX'
+import useModal from 'hooks/useModal'
 
 type Props = {
   children?: ReactNode

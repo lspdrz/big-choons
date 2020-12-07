@@ -1,8 +1,9 @@
-import React, { useContext } from 'react'
 import Link from 'next/link'
-import useModal from 'hooks/useModal'
-import modalConfirms from 'constants/confirms/modalConfirms'
+import React, { useContext } from 'react'
+
 import { AppContext } from 'components/App/AppContext'
+import modalConfirms from 'constants/confirms/modalConfirms'
+import useModal from 'hooks/useModal'
 
 const Header: React.FC = () => {
   const { openModal } = useModal()

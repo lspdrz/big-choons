@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Smile from 'components/Icons/Smile'
 
 const AboutButton: React.FC = () => (

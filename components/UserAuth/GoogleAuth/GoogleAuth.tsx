@@ -1,9 +1,10 @@
 import React, { useContext } from 'react'
 import { GoogleLogin } from 'react-google-login'
-import useJWT from 'hooks/useJWT'
-import { AppState, User } from 'interfaces'
+
 import { AppContext } from 'components/App/AppContext'
 import G from 'components/Icons/G'
+import useJWT from 'hooks/useJWT'
+import { AppState, User } from 'interfaces'
 
 const CLIENT_ID: string = process.env.NEXT_PUBLIC_GOOGLE_OAUTH_CLIENT_ID as string
 

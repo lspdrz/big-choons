@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react'
+
 import { AppState } from 'interfaces'
 
 type IAppContext = [AppState, React.Dispatch<React.SetStateAction<AppState>>]

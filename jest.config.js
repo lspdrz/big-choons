@@ -1,10 +1,12 @@
 module.exports = {
     roots: ['<rootDir>'],
     moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
+    setupFilesAfterEnv: ["<rootDir>/setupTests.js"],
     testPathIgnorePatterns: ['<rootDir>[/\\\\](node_modules|.next)[/\\\\]'],
     transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
     transform: {
-      '^.+\\.(ts|tsx)$': 'babel-jest',
+      "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
     },
     watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
     moduleNameMapper: {

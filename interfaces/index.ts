@@ -4,21 +4,14 @@
 //
 // import User from 'path/to/interfaces';
 
-export type AppState = {
-  modalId: string
-  user: User | null
-  jwt: string | null
-  checkingAuth: boolean
-}
-
-export type User = {
+export interface User {
   id: number
   username: string
   name: string
   email: string
 }
 
-export type Track = {
+export interface Track {
   id: number
   title: string
   source: string

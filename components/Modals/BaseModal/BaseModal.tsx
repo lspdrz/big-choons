@@ -1,8 +1,10 @@
 import React, { ReactNode, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 
+import { closeModal } from '../modalsSlice'
+
 import CloseX from 'components/Icons/CloseX'
-import useModal from 'hooks/useModal'
+import { useAppDispatch } from 'hooks'
 
 type Props = {
   children?: ReactNode
@@ -10,12 +12,12 @@ type Props = {
 }
 
 const BaseModal: React.FC<Props> = ({ children, title }: Props) => {
-  const { closeModal } = useModal()
+  const dispatch = useAppDispatch()
   const modalRoot = document.getElementById('modal')
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onEscKeyDown = (e: any): void => {
     if (e.key !== 'Escape') return
-    closeModal()
+    dispatch(closeModal())
   }
 
   useEffect(() => {
@@ -37,8 +39,8 @@ const BaseModal: React.FC<Props> = ({ children, title }: Props) => {
                   background:
                     'linear-gradient(0deg, rgba(85,60,154,1) 0%, rgba(128,90,213,0.85) 100%)',
                 }}
-                onClick={() => closeModal()}
-                onKeyDown={() => closeModal()}
+                onClick={() => dispatch(closeModal())}
+                onKeyDown={() => dispatch(closeModal())}
               ></div>
             </div>
             <div
@@ -49,7 +51,7 @@ const BaseModal: React.FC<Props> = ({ children, title }: Props) => {
             >
               <div className="flex flex-row justify-between w-full align-center border-b border-gray-400 px-8 py-4 ">
                 <p className="text-lg text-purple-600">{title}</p>
-                <button onClick={() => closeModal()}>
+                <button onClick={() => dispatch(closeModal())}>
                   <CloseX />
                 </button>
               </div>

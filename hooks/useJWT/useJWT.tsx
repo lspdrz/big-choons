@@ -1,13 +1,13 @@
 // Referenced this article:
 // https://marmelab.com/blog/2020/07/02/manage-your-jwt-react-admin-authentication-in-memory.html
 
-import { useContext } from 'react'
-
-import { AppContext } from 'components/App/AppContext'
-import { AppState, User } from 'interfaces'
+import { removeUser, setUser } from 'components/Auth/authSlice'
+import { useAppSelector, useAppDispatch } from 'hooks'
+import { User } from 'interfaces'
 
 type useJWTReturnType = {
-  eraseToken: () => void
+  checkAuth: () => void
+  eraseTokenAndUser: () => void
   setTokenAndUser: (refreshedUser: User, token: string, expiry: string) => void
   jwt: string | null
   user: User | null
@@ -16,7 +16,10 @@ type useJWTReturnType = {
 }
 
 const useJWT = (): useJWTReturnType => {
-  const [state, setState] = useContext(AppContext)
+  const dispatch = useAppDispatch()
+  const jwt = useAppSelector((state) => state.auth.jwt)
+  const user = useAppSelector((state) => state.auth.user)
+  const checkingAuth = useAppSelector((state) => state.auth.checkingAuth)
 
   const logoutEventName = 'big-choons-logout'
   let refreshTimeOutId: number
@@ -25,9 +28,21 @@ const useJWT = (): useJWTReturnType => {
   if (typeof window !== 'undefined') {
     window.addEventListener('storage', (event) => {
       if (event.key === logoutEventName) {
-        setState((state: AppState) => ({ ...state, user: null, jwt: null }))
+        dispatch(removeUser())
       }
     })
+  }
+
+  const checkAuth = async (): Promise<void> => {
+    try {
+      if (!jwt) {
+        await getRefreshedToken()
+      } else {
+        dispatch(removeUser())
+      }
+    } catch {
+      dispatch(removeUser())
+    }
   }
 
   // This countdown feature is used to renew the JWT in a way that is transparent to the user.
@@ -53,7 +68,7 @@ const useJWT = (): useJWTReturnType => {
       credentials: 'include',
     })
     if (res.status !== 200) {
-      eraseToken()
+      eraseTokenAndUser()
     } else {
       const resJson = await res.json()
       const refreshedUser: User = {
@@ -69,20 +84,20 @@ const useJWT = (): useJWTReturnType => {
   }
 
   const setTokenAndUser = (refreshedUser: User, token: string, expiry: string): void => {
-    setState((state: AppState) => ({
-      ...state,
-      user: refreshedUser,
-      jwt: token,
-      checkingAuth: false,
-    }))
+    dispatch(
+      setUser({
+        user: refreshedUser,
+        jwt: token,
+      })
+    )
     const startDate = new Date()
     const endDate = new Date(parseInt(expiry) * 1000)
     const delay = (endDate.getTime() - startDate.getTime()) / 1000
     refreshToken(delay)
   }
 
-  const eraseToken = (): void => {
-    setState((state: AppState) => ({ ...state, user: null, jwt: null, checkingAuth: false }))
+  const eraseTokenAndUser = (): void => {
+    dispatch(removeUser())
     abortRefreshToken()
     if (typeof window !== 'undefined') {
       window.localStorage.setItem(logoutEventName, Date.now().toString())
@@ -90,11 +105,12 @@ const useJWT = (): useJWTReturnType => {
   }
 
   return {
-    eraseToken,
+    checkAuth,
+    eraseTokenAndUser,
     setTokenAndUser,
-    jwt: state.jwt,
-    user: state.user,
-    checkingAuth: state.checkingAuth,
+    jwt,
+    user,
+    checkingAuth,
     getRefreshedToken,
   }
 }

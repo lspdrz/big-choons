@@ -1,15 +1,15 @@
 import Link from 'next/link'
-import React, { useContext } from 'react'
+import React from 'react'
 
-import { AppContext } from 'components/App/AppContext'
 import Play from 'components/Icons/Play'
 import SkipBack from 'components/Icons/SkipBack'
 import SkipNext from 'components/Icons/SkipNext'
 import Volume from 'components/Icons/Volume'
+import { useAppSelector } from 'hooks'
 
 const Player: React.FC = () => {
-  const [state] = useContext(AppContext)
-  return !state.user ? null : (
+  const user = useAppSelector((state) => state.auth.user)
+  return user ? null : (
     <section className="w-full border-t border-gray-300 bg-white h-20 fixed bottom-0 px-4 sm:px-6 lg:px-8">
       <div className="flex flex-row justify-between w-full h-full">
         {/* PLAYER CONTROLS */}

@@ -1,22 +1,24 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { GoogleLogin } from 'react-google-login'
 
-import { AppContext } from 'components/App/AppContext'
+import { checkAuth } from '../authSlice'
+
 import G from 'components/Icons/G'
+import { useAppDispatch } from 'hooks'
 import useJWT from 'hooks/useJWT'
-import { AppState, User } from 'interfaces'
+import { User } from 'interfaces'
 
 const CLIENT_ID: string = process.env.NEXT_PUBLIC_GOOGLE_OAUTH_CLIENT_ID as string
 
 const GoogleAuth: React.FC = () => {
-  const [, setState] = useContext(AppContext)
+  const dispatch = useAppDispatch()
 
   const { setTokenAndUser } = useJWT()
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const login = async (response: any): Promise<void> => {
     if (response.accessToken) {
-      setState((state: AppState) => ({ ...state, checkingAuth: true }))
+      dispatch(checkAuth)
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}auth/google/`, {
         method: 'POST',
         headers: {

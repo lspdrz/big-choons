@@ -1,17 +1,17 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
-import { AppContext } from 'components/App/AppContext'
+import { closeModal } from '../modalsSlice'
+
+import { checkAuth } from 'components/Auth/authSlice'
 import BaseModal from 'components/Modals/BaseModal'
+import { useAppDispatch } from 'hooks'
 import useJWT from 'hooks/useJWT'
-import useModal from 'hooks/useModal'
-import { AppState } from 'interfaces'
 
 const LogoutModal: React.FC = () => {
-  const { closeModal } = useModal()
-  const [, setState] = useContext(AppContext)
-  const { eraseToken } = useJWT()
+  const dispatch = useAppDispatch()
+  const { eraseTokenAndUser } = useJWT()
   const logout = async (): Promise<void> => {
-    setState((state: AppState) => ({ ...state, checkingAuth: true }))
+    dispatch(checkAuth())
     await fetch(`${process.env.NEXT_PUBLIC_API_URL}auth/logout/`, {
       method: 'GET',
       headers: {
@@ -19,8 +19,8 @@ const LogoutModal: React.FC = () => {
       },
       credentials: 'include',
     })
-    eraseToken()
-    closeModal()
+    eraseTokenAndUser()
+    dispatch(closeModal())
   }
   return (
     <BaseModal title="Log out">
